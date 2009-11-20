@@ -7,7 +7,16 @@ package br.ufrj.dcc.so20092.fastfood;
 public class Ingrediente {
     private String nome;
     private double valor;
+
+    public Ingrediente() {
+
+    }
     
+    public Ingrediente(String nome, double valor) {
+        this.nome = nome;
+        this.valor = valor;
+    }
+
     /**
      * @return the valor
      */
