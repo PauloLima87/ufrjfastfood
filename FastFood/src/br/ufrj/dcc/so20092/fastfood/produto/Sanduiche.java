@@ -1,8 +1,7 @@
 package br.ufrj.dcc.so20092.fastfood.produto;
 
-import br.ufrj.dcc.so20092.fastfood.produto.Produto;
 import java.util.HashSet;
-import java.util.List;
+import java.util.Iterator;
 import java.util.Set;
 
 /**
@@ -21,6 +20,11 @@ public class Sanduiche extends Produto {
     public Sanduiche(String nome, Set<Ingrediente> ingredientes) {
         this.nome = nome;
         this.ingredientes = ingredientes;
+        Iterator it = ingredientes.iterator();
+        while(it.hasNext()) {
+            Ingrediente ingrediente = (Ingrediente) it.next();
+            this.valorUnidade += ingrediente.getValorUnidade()*ingrediente.getQuantidade();
+        }
     }
 
     public String getNome() {

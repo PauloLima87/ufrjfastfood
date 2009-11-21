@@ -17,6 +17,7 @@ public class SanduicheTest extends TestCase {
         ingredientes.add(ingrediente1);
         ingredientes.add(ingrediente2);
         Sanduiche sanduiche = new Sanduiche("Saboroso", ingredientes);
+        assertEquals(sanduiche.getValorUnidade(), 1.7);
         assertEquals(sanduiche.getIngredientes().size(), 2);
     }
 
