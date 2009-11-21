@@ -7,6 +7,6 @@ import junit.framework.TestCase;
  */
 public class PedidoTest extends TestCase {
     public void testConstructor() {
-
+        
     }
 }
