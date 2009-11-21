@@ -7,6 +7,7 @@ package br.ufrj.dcc.so20092.fastfood;
 public class Ingrediente {
     private String nome;
     private double valor;
+    private int quantidade;
 
     public Ingrediente() {
 
@@ -15,6 +16,12 @@ public class Ingrediente {
     public Ingrediente(String nome, double valor) {
         this.nome = nome;
         this.valor = valor;
+    }
+
+    public Ingrediente(String nome, double valor, int quantidade) {
+        this.nome = nome;
+        this.valor = valor;
+        this.quantidade = quantidade;
     }
 
     public double getValor() {
@@ -31,6 +38,14 @@ public class Ingrediente {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public int getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
     }
 
     @Override

@@ -12,6 +12,12 @@ public class IngredienteTest extends TestCase {
         assertEquals(ingrediente.getNome(), "alface");
         assertEquals(ingrediente.getValor(), 5.10);
     }
+    public void testConstructorNomeValorQuantidade() {
+        Ingrediente ingrediente = new Ingrediente("tomate", 0.4, 2);
+        assertEquals(ingrediente.getNome(), "tomate");
+        assertEquals(ingrediente.getValor(), 0.4);
+        assertEquals(ingrediente.getQuantidade(), 2);
+    }
     public void testGetSetValor() {
         Ingrediente ingrediente = new Ingrediente();
         ingrediente.setValor(10.5);
@@ -21,6 +27,11 @@ public class IngredienteTest extends TestCase {
         Ingrediente ingrediente = new Ingrediente();
         ingrediente.setNome("alface");
         assertEquals(ingrediente.getNome(), "alface");
+    }
+    public void testGetSetQuantidade() {
+        Ingrediente ingrediente = new Ingrediente();
+        ingrediente.setQuantidade(1);
+        assertEquals(ingrediente.getQuantidade(), 1);
     }
     public void testIngredientesDiferentes() {
         Ingrediente ingrediente1 = new Ingrediente("a", 1);
