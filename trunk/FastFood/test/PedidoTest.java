@@ -19,14 +19,14 @@ public class PedidoTest extends TestCase {
 
     public void testGetValorTotal() {
         Cardapio cardapio = new Cardapio();
-        Sanduiche sanduiche = cardapio.getSanduiches().iterator().next();
-        Bebida bebida = cardapio.getBebidas().iterator().next();
+        Sanduiche sanduiche = cardapio.getSanduiche("Numero1");
+        Bebida bebida = cardapio.getBebida("coca");
         Item item1 = new Item(sanduiche, 1);
         Item item2 = new Item(bebida, 1);
         Pedido pedido = new Pedido();
         pedido.setItem(item1);
         pedido.setItem(item2);
-        System.out.println(sanduiche.getValorUnidade());
-        System.out.println(bebida.getValorUnidade());
+
+
     }
 }

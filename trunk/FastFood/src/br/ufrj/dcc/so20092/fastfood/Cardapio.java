@@ -98,9 +98,16 @@ public class Cardapio {
         Iterator it = this.sanduiches.iterator();
         while(it.hasNext()) {
             Sanduiche sanduiche = (Sanduiche) it.next();
-            if (sanduiche.getNome().equals(nome)) {
-                return sanduiche;
-            }
+            if (sanduiche.getNome().equals(nome)) return sanduiche;
+        }
+        return null;
+    }
+
+    public Bebida getBebida(String nome) {
+        Iterator it = this.bebidas.iterator();
+        while(it.hasNext()) {
+            Bebida bebida = (Bebida) it.next();
+            if (bebida.getNome().equals(nome)) return bebida;
         }
         return null;
     }
