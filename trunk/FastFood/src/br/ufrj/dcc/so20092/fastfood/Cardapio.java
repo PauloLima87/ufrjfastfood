@@ -76,4 +76,26 @@ public class Cardapio {
         this.bebidas.add(coca);
         this.bebidas.add(kuat);
     }
+
+    public Set<Sanduiche> getSanduiches() {
+        return sanduiches;
+    }
+
+    public void setSanduiches(Set<Sanduiche> sanduiches) {
+        this.sanduiches = sanduiches;
+    }
+
+    /**
+     * @return the bebidas
+     */
+    public Set<Bebida> getBebidas() {
+        return bebidas;
+    }
+
+    /**
+     * @param bebidas the bebidas to set
+     */
+    public void setBebidas(Set<Bebida> bebidas) {
+        this.bebidas = bebidas;
+    }
 }
