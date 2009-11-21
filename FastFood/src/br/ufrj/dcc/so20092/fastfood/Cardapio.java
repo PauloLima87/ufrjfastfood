@@ -1,5 +1,7 @@
 package br.ufrj.dcc.so20092.fastfood;
 
+import br.ufrj.dcc.so20092.fastfood.produto.Bebida;
+import br.ufrj.dcc.so20092.fastfood.produto.Sanduiche;
 import java.util.HashSet;
 import java.util.Set;
 
