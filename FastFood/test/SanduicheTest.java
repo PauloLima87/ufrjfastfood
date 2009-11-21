@@ -1,13 +1,25 @@
 import junit.framework.TestCase;
 
 import br.ufrj.dcc.so20092.fastfood.produto.Sanduiche;
-import br.ufrj.dcc.so20092.fastfood.ingrediente.Ingrediente;
+import br.ufrj.dcc.so20092.fastfood.produto.Ingrediente;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  *
  * @author kaiser
  */
 public class SanduicheTest extends TestCase {
+    public void testConstructorNomeIngrediente() {
+        Ingrediente ingrediente1 = new Ingrediente("alface", 0.5, 1);
+        Ingrediente ingrediente2 = new Ingrediente("cebola", 0.6, 2);
+        Set<Ingrediente> ingredientes = new HashSet<Ingrediente>();
+        ingredientes.add(ingrediente1);
+        ingredientes.add(ingrediente2);
+        Sanduiche sanduiche = new Sanduiche("Saboroso", ingredientes);
+        assertEquals(sanduiche.getIngredientes().size(), 2);
+    }
+
     public void testGetSetNome() {
         Sanduiche sanduiche = new Sanduiche();
         sanduiche.setNome("Sanduiche saboroso");

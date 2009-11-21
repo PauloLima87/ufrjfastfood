@@ -1,11 +1,17 @@
 package br.ufrj.dcc.so20092.fastfood.pedido;
 
-import br.ufrj.dcc.so20092.fastfood.produto.Bebida;
-import br.ufrj.dcc.so20092.fastfood.produto.Sanduiche;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Pedido {
-	private Sanduiche sanduiche;
-	private Bebida bebida;
-	private Double valor;
-	private Integer status;	
+    private Set<Item> itens = new HashSet<Item>();
+    private double valorTotal;
+
+    public void setItem(Item item) {
+        this.itens.add(item);
+    }
+
+    public Set<Item> getItems() {
+        return this.itens;
+    }
 }

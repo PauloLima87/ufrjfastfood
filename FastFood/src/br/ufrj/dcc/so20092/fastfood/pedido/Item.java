@@ -6,9 +6,18 @@ import br.ufrj.dcc.so20092.fastfood.produto.Produto;
  *
  * @author kaiser
  */
-public class ItemPedido {
+public class Item {
     private Produto produto;
     private int quantidade;
+
+    public Item() {
+
+    }
+    
+    public Item(Produto produto, int quantidade) {
+        this.produto = produto;
+        this.quantidade = quantidade;
+    }
 
     public int getQuantidade() {
         return quantidade;

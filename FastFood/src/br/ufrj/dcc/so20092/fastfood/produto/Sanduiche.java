@@ -14,6 +14,15 @@ public class Sanduiche extends Produto {
     private Set<Ingrediente> ingredientes = new HashSet<Ingrediente>();
     private double valorUnidade;
 
+    public Sanduiche() {
+
+    }
+    
+    public Sanduiche(String nome, Set<Ingrediente> ingredientes) {
+        this.nome = nome;
+        this.ingredientes = ingredientes;
+    }
+
     public String getNome() {
         return nome;
     }

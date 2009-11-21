@@ -1,6 +1,6 @@
 import junit.framework.TestCase;
 
-import br.ufrj.dcc.so20092.fastfood.ingrediente.Ingrediente;
+import br.ufrj.dcc.so20092.fastfood.produto.Ingrediente;
 
 /**
  *
