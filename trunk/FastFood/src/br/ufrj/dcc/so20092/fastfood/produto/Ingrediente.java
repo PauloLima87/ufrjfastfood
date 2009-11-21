@@ -1,4 +1,4 @@
-package br.ufrj.dcc.so20092.fastfood.ingrediente;
+package br.ufrj.dcc.so20092.fastfood.produto;
 
 /**
  *
