@@ -1,5 +1,6 @@
 
 import br.ufrj.dcc.so20092.fastfood.Cardapio;
+import br.ufrj.dcc.so20092.fastfood.produto.Bebida;
 import br.ufrj.dcc.so20092.fastfood.produto.Sanduiche;
 import junit.framework.TestCase;
 
@@ -18,5 +19,11 @@ public class CardapioTest extends TestCase {
         Cardapio cardapio = new Cardapio();
         Sanduiche sanduiche = cardapio.getSanduiche("Numero1");
         assertEquals(sanduiche.getNome(), "Numero1");
+    }
+
+    public void testGetSetBebida() {
+        Cardapio cardapio = new Cardapio();
+        Bebida bebida = cardapio.getBebida("coca");
+        assertEquals(bebida.getNome(), "coca");
     }
 }
