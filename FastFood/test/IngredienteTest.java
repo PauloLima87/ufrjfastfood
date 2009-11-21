@@ -1,6 +1,7 @@
+import junit.framework.TestCase;
+
 import br.ufrj.dcc.so20092.fastfood.Ingrediente;
 
-import junit.framework.TestCase;
 /**
  *
  * @author kaiser
@@ -20,5 +21,15 @@ public class IngredienteTest extends TestCase {
         Ingrediente ingrediente = new Ingrediente();
         ingrediente.setNome("alface");
         assertEquals(ingrediente.getNome(), "alface");
+    }
+    public void testIngredientesDiferentes() {
+        Ingrediente ingrediente1 = new Ingrediente("a", 1);
+        Ingrediente ingrediente2 = new Ingrediente("b", 2);
+        assertEquals(ingrediente1.equals(ingrediente2), false);
+    }
+    public void testIngredientesIguais() {
+        Ingrediente ingrediente1 = new Ingrediente("batata", 1.2);
+        Ingrediente ingrediente2 = new Ingrediente("batata", 1.2);
+        assertEquals(ingrediente1.equals(ingrediente2), true);
     }
 }

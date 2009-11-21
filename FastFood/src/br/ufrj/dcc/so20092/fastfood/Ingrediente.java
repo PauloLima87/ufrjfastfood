@@ -32,4 +32,20 @@ public class Ingrediente {
     public void setNome(String nome) {
         this.nome = nome;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Ingrediente)) return false;
+        Ingrediente ing = (Ingrediente)o;
+        return (nome == null ? ing.nome == null : nome.equals(ing.nome));
+    }
+    
+    @Override
+    public int hashCode() {
+        int result;
+        result = nome.hashCode();
+        result += (int) (valor);
+        return result;
+    }
 }
