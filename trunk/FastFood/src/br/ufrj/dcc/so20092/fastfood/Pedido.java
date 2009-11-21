@@ -4,6 +4,5 @@ public class Pedido {
 	private Sanduiche sanduiche[][];
 	private Bebida bebida;
 	private Double valor;
-	private Integer status;
-	
+	private Integer status;	
 }
