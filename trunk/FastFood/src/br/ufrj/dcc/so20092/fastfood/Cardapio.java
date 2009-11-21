@@ -4,6 +4,7 @@ import br.ufrj.dcc.so20092.fastfood.produto.Bebida;
 import br.ufrj.dcc.so20092.fastfood.produto.Ingrediente;
 import br.ufrj.dcc.so20092.fastfood.produto.Sanduiche;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 
 public class Cardapio {
@@ -91,5 +92,16 @@ public class Cardapio {
 
     public void setBebidas(Set<Bebida> bebidas) {
         this.bebidas = bebidas;
+    }
+
+    public Sanduiche getSanduiche(String nome) {
+        Iterator it = this.sanduiches.iterator();
+        while(it.hasNext()) {
+            Sanduiche sanduiche = (Sanduiche) it.next();
+            if (sanduiche.getNome().equals(nome)) {
+                return sanduiche;
+            }
+        }
+        return null;
     }
 }
