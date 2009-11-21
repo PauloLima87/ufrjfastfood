@@ -6,30 +6,30 @@ package br.ufrj.dcc.so20092.fastfood;
  */
 public class Ingrediente {
     private String nome;
-    private double valor;
+    private double valorUnidade;
     private int quantidade;
 
     public Ingrediente() {
 
     }
     
-    public Ingrediente(String nome, double valor) {
+    public Ingrediente(String nome, double valorUnidade) {
         this.nome = nome;
-        this.valor = valor;
+        this.valorUnidade = valorUnidade;
     }
 
-    public Ingrediente(String nome, double valor, int quantidade) {
+    public Ingrediente(String nome, double valorUnidade, int quantidade) {
         this.nome = nome;
-        this.valor = valor;
+        this.valorUnidade = valorUnidade;
         this.quantidade = quantidade;
     }
 
-    public double getValor() {
-        return valor;
+    public double getValorUnidade() {
+        return valorUnidade;
     }
 
-    public void setValor(double valor) {
-        this.valor = valor;
+    public void setValorUnidade(double valorUnidade) {
+        this.valorUnidade = valorUnidade;
     }
 
     public String getNome() {
@@ -60,7 +60,7 @@ public class Ingrediente {
     public int hashCode() {
         int result;
         result = nome.hashCode();
-        result += (int) (valor);
+        result += (int) (valorUnidade);
         return result;
     }
 }
