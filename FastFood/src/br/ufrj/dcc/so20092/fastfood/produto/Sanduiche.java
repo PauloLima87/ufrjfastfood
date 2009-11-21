@@ -1,6 +1,5 @@
 package br.ufrj.dcc.so20092.fastfood.produto;
 
-import br.ufrj.dcc.so20092.fastfood.ingrediente.Ingrediente;
 import br.ufrj.dcc.so20092.fastfood.produto.Produto;
 import java.util.HashSet;
 import java.util.List;
