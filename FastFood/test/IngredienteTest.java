@@ -7,21 +7,21 @@ import br.ufrj.dcc.so20092.fastfood.Ingrediente;
  * @author kaiser
  */
 public class IngredienteTest extends TestCase {
-    public void testConstructorNomeValor() {
+    public void testConstructorNomeValorUnid() {
         Ingrediente ingrediente = new Ingrediente("alface", 5.10);
         assertEquals(ingrediente.getNome(), "alface");
-        assertEquals(ingrediente.getValor(), 5.10);
+        assertEquals(ingrediente.getValorUnidade(), 5.10);
     }
     public void testConstructorNomeValorQuantidade() {
         Ingrediente ingrediente = new Ingrediente("tomate", 0.4, 2);
         assertEquals(ingrediente.getNome(), "tomate");
-        assertEquals(ingrediente.getValor(), 0.4);
+        assertEquals(ingrediente.getValorUnidade(), 0.4);
         assertEquals(ingrediente.getQuantidade(), 2);
     }
     public void testGetSetValor() {
         Ingrediente ingrediente = new Ingrediente();
-        ingrediente.setValor(10.5);
-        assertEquals(ingrediente.getValor(), 10.5);
+        ingrediente.setValorUnidade(10.5);
+        assertEquals(ingrediente.getValorUnidade(), 10.5);
     }
     public void testGetSetNome() {
         Ingrediente ingrediente = new Ingrediente();
