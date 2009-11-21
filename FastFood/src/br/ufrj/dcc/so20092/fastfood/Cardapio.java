@@ -85,16 +85,10 @@ public class Cardapio {
         this.sanduiches = sanduiches;
     }
 
-    /**
-     * @return the bebidas
-     */
     public Set<Bebida> getBebidas() {
         return bebidas;
     }
 
-    /**
-     * @param bebidas the bebidas to set
-     */
     public void setBebidas(Set<Bebida> bebidas) {
         this.bebidas = bebidas;
     }
