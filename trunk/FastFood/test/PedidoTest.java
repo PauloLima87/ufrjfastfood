@@ -26,7 +26,6 @@ public class PedidoTest extends TestCase {
         Pedido pedido = new Pedido();
         pedido.setItem(item1);
         pedido.setItem(item2);
-
-
+        assertEquals((bebida.getValorUnidade()+sanduiche.getValorUnidade()), pedido.getValorTotal());
     }
 }
