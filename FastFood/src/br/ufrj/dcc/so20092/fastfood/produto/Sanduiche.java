@@ -12,7 +12,7 @@ public class Sanduiche extends Produto {
     private String nome;
     private Set<Ingrediente> ingredientes = new HashSet<Ingrediente>();
     private double valorUnidade;
-
+    
     public Sanduiche() {
 
     }
