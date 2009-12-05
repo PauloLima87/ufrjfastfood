@@ -1,4 +1,4 @@
-package fastfood.view;
+package br.ufrj.dcc.so20092.fastfood.view;
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;

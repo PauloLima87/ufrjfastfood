@@ -1,6 +1,6 @@
-package fastfood.model;
+package br.ufrj.dcc.so20092.fastfood.model;
 
-import fastfood.view.TelaPrincipal;
+import br.ufrj.dcc.so20092.fastfood.view.TelaPrincipal;
 
 public class Main {
 

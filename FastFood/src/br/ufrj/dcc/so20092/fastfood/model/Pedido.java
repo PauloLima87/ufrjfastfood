@@ -1,4 +1,4 @@
-package fastfood.model;
+package br.ufrj.dcc.so20092.fastfood.model;
 
 import java.util.HashSet;
 
