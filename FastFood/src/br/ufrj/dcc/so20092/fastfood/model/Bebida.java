@@ -18,20 +18,19 @@ public class Bebida extends Produto {
     }
 
 
-
-/*    @Override
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Bebida)) return false;
         Bebida ing = (Bebida)o;
-        return (nome == null ? ing.nome == null : nome.equals(ing.nome));
+        return (this.getNome() == null ? ing.getNome() == null : this.getNome().equals(ing.getNome()));
     }
 
     @Override
     public int hashCode() {
         int result;
-        result = nome.hashCode();
-        result += (int) (valorUnidade);
+        result = this.getNome().hashCode();
+        result += (int) (this.getValorUnidade());
         return result;
-    }*/
+    }
 }
