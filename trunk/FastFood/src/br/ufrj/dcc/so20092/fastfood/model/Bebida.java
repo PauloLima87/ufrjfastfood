@@ -1,8 +1,8 @@
-package fastfood.model;
+package br.ufrj.dcc.so20092.fastfood.model;
 
 import java.util.HashSet;
 
-import fastfood.model.Produto;
+import br.ufrj.dcc.so20092.fastfood.model.Produto;
 
 
 public class Bebida extends Produto {
