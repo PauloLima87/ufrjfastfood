@@ -8,44 +8,43 @@ public class Pedido {
     private Integer identificacao;
     private Integer status;
     
-	public Pedido(HashSet<ItemPedido> item) {
-		this.item = item;
-		calculaValorTotal();
-		this.status = 0;
-		this.identificacao = 400;
-	}
+    public Pedido(HashSet<ItemPedido> item) {
+        this.item = item;
+        calculaValorTotal();
+        this.status = 0;
+        this.identificacao = 400;
+    }
 
     public HashSet<ItemPedido> getItem() {
-		return item;
+            return item;
 	}
 	public void setItem(HashSet<ItemPedido> item) {
-		this.item = item;
+            this.item = item;
 	}
 	public double getValorTotal() {
-		return valorTotal;
+            return valorTotal;
 	}
 	public void setValorTotal(double valorTotal) {
-		this.valorTotal = valorTotal;
+            this.valorTotal = valorTotal;
 	}
 	public Integer getIdentificacao() {
-		return identificacao;
+            return identificacao;
 	}
 	public void setIdentificacao(Integer identificacao) {
-		this.identificacao = identificacao;
+            this.identificacao = identificacao;
 	}
 	public Integer getStatus() {
-		return status;
+            return status;
 	}
 	public void setStatus(Integer status) {
-		this.status = status;
+            this.status = status;
 	}
     
 	public void calculaValorTotal() {
     	double valor = 0.0;
     	for (ItemPedido itemPedido : item)
-			valor += itemPedido.getQuantidade() * itemPedido.getProduto().getValorUnidade();
-
-		setValorTotal(valor);
+            valor += itemPedido.getQuantidade() * itemPedido.getProduto().getValorUnidade();
+            setValorTotal(valor);
 	}
     
     public void adiciona(Produto produto, Integer quantidade) {
