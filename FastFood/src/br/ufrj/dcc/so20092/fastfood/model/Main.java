@@ -1,5 +1,7 @@
 package br.ufrj.dcc.so20092.fastfood.model;
 
+
+
 import br.ufrj.dcc.so20092.fastfood.view.TelaPrincipal;
 
 public class Main {
