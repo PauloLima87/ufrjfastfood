@@ -1,5 +1,7 @@
 package br.ufrj.dcc.so20092.fastfood.view;
 
+import br.ufrj.dcc.so20092.fastfood.model.Cliente;
+import br.ufrj.dcc.so20092.fastfood.model.FilaAtendimento;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JMenuBar;
@@ -108,8 +110,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     public void clicouCliente() {
-        System.out.println("aAAA");
-        
+        Cliente cliente = new Cliente();
+        FilaAtendimento fila = new FilaAtendimento();
+        fila.addClienteFilaGlobal(cliente);
+        System.out.println(fila.getClienteFilaGlobal().getPedido().getValorTotal());
     }
 
     public void clicouEstoque() {
