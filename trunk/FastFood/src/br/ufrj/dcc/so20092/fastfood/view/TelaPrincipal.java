@@ -110,10 +110,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     public void clicouCliente() {
+        /*
         Cliente cliente = new Cliente();
-        FilaAtendimento fila = new FilaAtendimento();
-        fila.addClienteFilaGlobal(cliente);
-        System.out.println(fila.getClienteFilaGlobal().getPedido().getValorTotal());
+        //FilaAtendimento fila = new FilaAtendimento();
+        FilaAtendimento.addClienteFilaGlobal(cliente);
+        System.out.println(FilaAtendimento.getClienteFilaGlobal().getPedido().getValorTotal());
+         */
     }
 
     public void clicouEstoque() {

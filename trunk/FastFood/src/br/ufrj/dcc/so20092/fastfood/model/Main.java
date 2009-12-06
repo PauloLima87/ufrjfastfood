@@ -4,13 +4,15 @@ import br.ufrj.dcc.so20092.fastfood.view.TelaPrincipal;
 
 public class Main {
 
-    //static String global = new String("globallll");
+    //fila de atendimento
+    /*
     static FilaAtendimento filaAtendimento = new FilaAtendimento();
 
     CaixaAtendimento caixa1 = new CaixaAtendimento(new Integer(1));
     CaixaAtendimento caixa2 = new CaixaAtendimento(new Integer(2));
     CaixaAtendimento caixa3 = new CaixaAtendimento(new Integer(3));
-
+    */
+    
     public static void main(String[] args) {
         TelaPrincipal t = new TelaPrincipal();
         t.setVisible(true);

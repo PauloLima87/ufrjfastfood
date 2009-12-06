@@ -41,7 +41,7 @@ public class FilaAtendimento extends Main{
             return true;
         }
     }
-
+/*
     public static void addClienteFilaGlobal(Cliente cliente){
         filaAtendimento.addCliente(cliente);
     }
@@ -54,4 +54,8 @@ public class FilaAtendimento extends Main{
         }
     }
 
+    public static Integer getSizeFilaGlobal(){
+        return filaAtendimento.size();
+    }
+    */
 }
