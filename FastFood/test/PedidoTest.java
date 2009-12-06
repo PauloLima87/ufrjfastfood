@@ -16,9 +16,7 @@ public class PedidoTest extends TestCase {
         HashSet<ItemPedido> itens = new HashSet<ItemPedido>();
         HashSet<ItemProduto> ingredientes = new HashSet<ItemProduto>();
         ingredientes.add(new ItemProduto(new Ingrediente("coca", 2.0), 1));
-        System.out.println("aaa");
         itens.add(new ItemPedido(new Bebida("coca", ingredientes), 2));
-        System.out.println("aaa");
         Pedido p = new Pedido(itens);
     }
 }

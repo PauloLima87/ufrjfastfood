@@ -1,21 +1,15 @@
 
 import br.ufrj.dcc.so20092.fastfood.model.Cliente;
+import br.ufrj.dcc.so20092.fastfood.model.FilaAtendimento;
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+import junit.framework.TestCase;
 
-/**
- *
- * @author Pablo
- */
-public class FilaAtendimentoTest {
-    public void testAdd() {
+public class FilaAtendimentoTest extends TestCase {
+    public void testAddCliente() {
         FilaAtendimento fa = new FilaAtendimento();
         Cliente cliente = new Cliente();
         fa.addCliente(cliente);
-        assertEquals(fa.getFila().contains(), cliente);
-
+        fa.addCliente(cliente);
+        assertEquals(fa.getFila().size(), 2);
     }
 }
