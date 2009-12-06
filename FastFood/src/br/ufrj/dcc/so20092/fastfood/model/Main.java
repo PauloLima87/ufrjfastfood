@@ -13,7 +13,8 @@ public class Main {
 		// TODO Auto-generated method stub
 		TelaPrincipal t = new TelaPrincipal();
 		t.setVisible(true);
-		t.setSize(400, 300);
+                
 	}
 
+        
 }
