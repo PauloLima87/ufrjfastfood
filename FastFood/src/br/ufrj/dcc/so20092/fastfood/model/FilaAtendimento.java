@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author kaiser
  */
-public class FilaAtendimento {
+public class FilaAtendimento extends Main{
     private ArrayList<Cliente> fila = new ArrayList<Cliente>();
 
     public void addCliente(Cliente cliente) {
@@ -27,6 +27,31 @@ public class FilaAtendimento {
     }
 
     public Cliente getNext() {
-        return this.fila.remove(0);
+        try {
+            return this.fila.remove(0);
+        } catch (Exception e) {
+            return new Cliente();
+        }
     }
+
+    public Boolean filaVazia(){
+        if(fila.size() > 0){
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    public static void addClienteFilaGlobal(Cliente cliente){
+        filaAtendimento.addCliente(cliente);
+    }
+
+    public static Cliente getClienteFilaGlobal(){
+        try {
+            return filaAtendimento.getNext();
+        } catch (Exception e) {
+            return new Cliente();
+        }
+    }
+
 }
