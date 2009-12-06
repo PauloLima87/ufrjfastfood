@@ -6,6 +6,7 @@ public class Main {
 
     //fila de atendimento
     /*
+     * 
     static FilaAtendimento filaAtendimento = new FilaAtendimento();
 
     CaixaAtendimento caixa1 = new CaixaAtendimento(new Integer(1));
