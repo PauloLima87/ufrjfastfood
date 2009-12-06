@@ -7,6 +7,9 @@ public class Estoque {
 
     public Estoque () {
         itemEstoque = new HashSet<ItemEstoque>();
+        //itemEstoque.add(new ItemEstoque(new Ingrediente("alfafa",0.75),1000));
+        //itemEstoque.add(new ItemEstoque(new Ingrediente("alfofo",3.75),2000));
+        //itemEstoque.add(new ItemEstoque(new Ingrediente("alfifi",5.69),3000));
     }
 
     public HashSet<ItemEstoque> getItemEstoque() {

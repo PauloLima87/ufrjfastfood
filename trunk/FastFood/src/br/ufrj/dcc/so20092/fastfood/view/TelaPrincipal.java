@@ -5,7 +5,6 @@ import java.awt.event.ActionListener;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
-import javax.swing.plaf.basic.BasicSliderUI.ActionScroller;
 
 public class TelaPrincipal extends javax.swing.JFrame {
     private JPanel telaPedido = null;
@@ -22,6 +21,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     public TelaPrincipal() {
         criaMenu();
         initComponents();
+        
     }
 
     private void trocaForm(JPanel novoPainel) {
@@ -36,6 +36,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         cliente.setText("Adicionar Cliente");
         cliente.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                System.out.println("aaaaabbbbbb");
                 clicouCliente();
             }
         });
@@ -71,8 +72,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 clicouSair();
             }
         });
-        menu.add(sair);
-        
+        menu.add(sair);        
         setJMenuBar(menu);
     }
 
@@ -107,11 +107,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     public void clicouCliente() {
+        System.out.println("aAAA");
         
     }
 
     public void clicouEstoque() {
-
+        System.out.println("veio");
+        trocaForm(new TelaEstoque());
     }
 
     public void clicouRelatorio() {
