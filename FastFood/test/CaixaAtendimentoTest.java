@@ -7,17 +7,33 @@ import junit.framework.TestCase;
 
 public class CaixaAtendimentoTest extends TestCase {
     public void testConstrutor() {
-        CaixaAtendimento ca = new CaixaAtendimento(1);
+        FilaAtendimento fa = new FilaAtendimento();
+        CaixaAtendimento ca = new CaixaAtendimento(1, fa);
         assertEquals(ca.getId(), new Integer(1));
     }
 
-    public void testgetNext() {
-        CaixaAtendimento ca = new CaixaAtendimento(1);
-        ca.setDisponivel(true);
+    public void testGetNext() {
         FilaAtendimento fa = new FilaAtendimento();
-        Cliente cliente = new Cliente();
-        fa.addCliente(cliente);
-        assertEquals(ca.getNext(), cliente);
+        CaixaAtendimento c1 = new CaixaAtendimento(1, fa);
+        CaixaAtendimento c2 = new CaixaAtendimento(2, fa);
+        CaixaAtendimento c3 = new CaixaAtendimento(3, fa);
+        fa.addCliente(new Cliente());
+        fa.addCliente(new Cliente());
+        fa.addCliente(new Cliente());
+        c1.getProximoCliente();
+        c2.getProximoCliente();
+        c3.getProximoCliente();
+        assertEquals(fa.filaVazia(), Boolean.TRUE);
+    }
+
+    public void testVerificarDisponibilidadePedido() {
+        FilaAtendimento fa = new FilaAtendimento();
+        CaixaAtendimento c1 = new CaixaAtendimento(1, fa);
+        CaixaAtendimento c2 = new CaixaAtendimento(2, fa);
+        CaixaAtendimento c3 = new CaixaAtendimento(3, fa);
+        fa.addCliente(new Cliente());
+        c1.getProximoCliente();
+
 
     }
 }
