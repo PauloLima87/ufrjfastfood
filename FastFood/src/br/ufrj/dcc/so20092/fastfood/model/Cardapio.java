@@ -81,8 +81,7 @@ Duas metades de pão árabe, 100g de queijo minas, 5g de orégano e 35g de tomat
         itens.add(ip);
         ip = new ItemProduto(beterraba, 50);
         itens.add(ip);
-
-        Sanduiche s3 = new Sanduiche("Peito de peru", itens);
+        Sanduiche s3 = new Sanduiche("Cenoura com Beterraba", itens);
         sanduiches.add(s3);
 
         itens.clear();

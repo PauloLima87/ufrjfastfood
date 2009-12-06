@@ -29,13 +29,20 @@ public class Cliente {
     }
 
     private void sorteiaPedido() {
-        ArrayList<Sanduiche> sanduiches = (new Cardapio()).getSanduiches();
-        ArrayList<Bebida> bebidas = (new Cardapio()).getBebidas();
+        Cardapio cardapio = new Cardapio();
+        ArrayList<Sanduiche> sanduiches = cardapio.getSanduiches();
+        ArrayList<Bebida> bebidas = cardapio.getBebidas();
+
         Random random = new Random();
-        Integer escolhaSanduiche = random.nextInt(3);
-        Integer escolhaBebida = random.nextInt(3);
+        Integer escolhaSanduiche = random.nextInt(2) + 1;
+        Integer escolhaBebida = random.nextInt(2) + 1;
+        Integer numeroSanduiches = random.nextInt(4) + 1;
+        Integer numeroBebidas = random.nextInt(4) + 1;
 
-        sanduiches.get(escolhaSanduiche);
+        HashSet<ItemPedido> ip = new HashSet<ItemPedido>();
+        ip.add(new ItemPedido(sanduiches.get(escolhaSanduiche), numeroSanduiches));
+        ip.add(new ItemPedido(bebidas.get(escolhaBebida), numeroBebidas));
 
+        pedido = new Pedido(ip);
     }
 }
