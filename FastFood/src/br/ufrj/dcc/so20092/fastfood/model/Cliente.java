@@ -5,6 +5,10 @@
 
 package br.ufrj.dcc.so20092.fastfood.model;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Random;
+
 /**
  *
  * @author Pablo
@@ -25,6 +29,13 @@ public class Cliente {
     }
 
     private void sorteiaPedido() {
-        pedido = new Pedido();
+        ArrayList<Sanduiche> sanduiches = (new Cardapio()).getSanduiches();
+        ArrayList<Bebida> bebidas = (new Cardapio()).getBebidas();
+        Random random = new Random();
+        Integer escolhaSanduiche = random.nextInt(3);
+        Integer escolhaBebida = random.nextInt(3);
+
+        sanduiches.get(escolhaSanduiche);
+
     }
 }

@@ -5,50 +5,133 @@
 
 package br.ufrj.dcc.so20092.fastfood.model;
 
-import br.ufrj.dcc.so20092.fastfood.model.ItemProduto;
-
+import java.util.ArrayList;
 import java.util.HashSet;
-/**
- *
- * @author Pablo
- */
+
 public class Cardapio {
 
+    private ArrayList<Sanduiche> sanduiches = new ArrayList<Sanduiche>();
+    private ArrayList<Bebida> bebidas = new ArrayList<Bebida>();
     /*Sanduiches:
-
-- Tomate seco no pão árabe:
-
-
-- Peito de peru
-Duas fatias de pão de forma integral, 15g de cream cheese, 75g peito de peru, 50g de alface e 50g de tomate
-(R$ 9, 00)
-
-- Beterraba com Cenoura light
-Duas fatias de pão de forma light, 15 gramas de requeijão light, 100g peito de frango grelhado, 50g de cenoura ralada 50 g de beterraba ralada 1 colher de azeite.
-(R$ 8, 50)
-
 - Frango com abacaxi
 Um pão de leite, 150 gramas de peito de frango grelhado, 50g de abacaxi.
 (R$ 7,50)
-
 - Minas especial
 Duas metades de pão árabe, 100g de queijo minas, 5g de orégano e 35g de tomate
 (R$ 6,90)
+*/
 
+    public Cardapio() {
+        Ingrediente pao = new Ingrediente("pão árabe", 0.5);
+        Ingrediente paoForma = new Ingrediente("pão de forma", 0.5);
+        Ingrediente tomate = new Ingrediente("tomate seco", 0.3);
+        Ingrediente creamCheese = new Ingrediente("cream cheese", 2.0);
+        Ingrediente presuntoParma = new Ingrediente("presunto parma", 1.0);
+        Ingrediente rucula = new Ingrediente("rúcula", 0.3);
+        Ingrediente queijoMinas = new Ingrediente("queijo minas", 0.4);
+        Ingrediente azeite = new Ingrediente("azeite", 1.0);
+        Ingrediente koka = new Ingrediente("lata de koka-cola", 2.0);
+        Ingrediente ispraite = new Ingrediente("lata de ispraite", 2.0);
+        Ingrediente phanta = new Ingrediente("lata de phanta", 2.0);
+        Ingrediente peitoPeru = new Ingrediente("peito de peru", 1.0);
+        Ingrediente alface = new Ingrediente("alface", 0.3);
+        Ingrediente requeijao = new Ingrediente("requeijão", 1.0);
+        Ingrediente peitoFrango = new Ingrediente("peito de frango", 1.0);
+        Ingrediente cenoura = new Ingrediente("cenoura", 0.4);
+        Ingrediente beterraba = new Ingrediente("beterraba", 0.8);
 
-Bebidas
+        HashSet<ItemProduto> itens = new HashSet<ItemProduto>();
+        ItemProduto ip = new ItemProduto(pao, 2);
+        itens.add(ip);
+        ip = new ItemProduto(tomate, 50);
+        itens.add(ip);
+        ip = new ItemProduto(presuntoParma, 75);
+        itens.add(ip);
+        ip = new ItemProduto(rucula, 20);
+        itens.add(ip);
+        ip = new ItemProduto(queijoMinas, 50);
+        itens.add(ip);
+        ip = new ItemProduto(azeite, 1);
+        itens.add(ip);
+        Sanduiche s1 = new Sanduiche("Tomate seco no pão árabe", itens);
+        sanduiches.add(s1);
 
-- Suco de Limão (suco de meio limão, gelo, água mineral)
-- Suco de Laranja com cenoura (2 laranjas, meia cenoura média, gelo, água mineral)
-- Suco de laranja comun (suco de duas laranjas)
-- Suco de maça (suco de uma maça, água mineral com gas e gelo)
-- Suco de abacaxi com hortelã ( suco de 100g de abacaxi, 10g de hortelã, água com gás e gelo)*/
-    HashSet<ItemProduto> itens = new HashSet<ItemProduto>();
-    HashSet<>
-    Ingrediente ingrediente = new Ingrediente("pão árabe", 0.5);
-    itens.add(new ItemProduto(new Ingrediente("pão árabe", 0.5), 1));
-    itens.add(new Be)
-    Sanduiche tomateSeco = new Sanduiche("Tomate seco no pão árabe", itens);
-    //Duas metades de pão árabe, 50g de tomate seco, 75g de presunto parma, 20g de rúcula, 50g de queijo minas, 1 colher de azeite
-//(R$ 10, 50)
+        itens.clear();
+        ip = new ItemProduto(paoForma, 2);
+        itens.add(ip);
+        ip = new ItemProduto(creamCheese, 15);
+        itens.add(ip);
+        ip = new ItemProduto(peitoPeru, 75);
+        itens.add(ip);
+        ip = new ItemProduto(alface, 50);
+        itens.add(ip);
+        ip = new ItemProduto(tomate, 50);
+        itens.add(ip);
+        Sanduiche s2 = new Sanduiche("Peito de peru", itens);
+        sanduiches.add(s2);
+
+        itens.clear();
+        ip = new ItemProduto(paoForma, 2);
+        itens.add(ip);
+        ip = new ItemProduto(requeijao, 15);
+        itens.add(ip);
+        ip = new ItemProduto(peitoFrango, 100);
+        itens.add(ip);
+        ip = new ItemProduto(cenoura, 50);
+        itens.add(ip);
+        ip = new ItemProduto(beterraba, 50);
+        itens.add(ip);
+
+        Sanduiche s3 = new Sanduiche("Peito de peru", itens);
+        sanduiches.add(s3);
+
+        itens.clear();
+        ip = new ItemProduto(koka, 1);
+        itens.add(ip);
+        
+        Bebida b1 = new Bebida("Koka-Cola", itens);
+        bebidas.add(b1);
+
+        itens.clear();
+        ip = new ItemProduto(ispraite, 1);
+        itens.add(ip);
+
+        Bebida b2 = new Bebida("Ispraite", itens);
+        bebidas.add(b2);
+
+        itens.clear();
+        ip = new ItemProduto(phanta, 1);
+        itens.add(ip);
+
+        Bebida b3 = new Bebida("Phanta", itens);
+        bebidas.add(b3);
+    }
+
+    /**
+     * @return the sanduiches
+     */
+    public ArrayList<Sanduiche> getSanduiches() {
+        return sanduiches;
+    }
+
+    /**
+     * @param sanduiches the sanduiches to set
+     */
+    public void setSanduiches(ArrayList<Sanduiche> sanduiches) {
+        this.sanduiches = sanduiches;
+    }
+
+    /**
+     * @return the bebidas
+     */
+    public ArrayList<Bebida> getBebidas() {
+        return bebidas;
+    }
+
+    /**
+     * @param bebidas the bebidas to set
+     */
+    public void setBebidas(ArrayList<Bebida> bebidas) {
+        this.bebidas = bebidas;
+    }
 }

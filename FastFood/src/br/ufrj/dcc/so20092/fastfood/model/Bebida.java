@@ -9,8 +9,8 @@ public class Bebida extends Produto {
     	setIngredientes(ingredientes);
         Double valor = 0.0;
         for (ItemProduto itemProduto : ingredientes) {
-			valor += itemProduto.getIngrediente().getValor() * itemProduto.getQuantidade();
-		}
+            valor += itemProduto.getIngrediente().getValor() * itemProduto.getQuantidade();
+        }
         setValorUnidade(valor);
     }
 
