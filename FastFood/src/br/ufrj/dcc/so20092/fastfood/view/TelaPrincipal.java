@@ -36,7 +36,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         cliente.setText("Adicionar Cliente");
         cliente.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                System.out.println("aaaaabbbbbb");
+                //System.out.println("aaaaabbbbbb");
+                trocaForm(new NewJPanel());
                 clicouCliente();
             }
         });
