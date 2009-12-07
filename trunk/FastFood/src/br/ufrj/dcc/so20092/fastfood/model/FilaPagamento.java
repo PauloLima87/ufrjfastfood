@@ -1,8 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package br.ufrj.dcc.so20092.fastfood.model;
 
 import java.util.ArrayList;
@@ -11,7 +6,7 @@ import java.util.ArrayList;
  *
  * @author kaiser
  */
-public class FilaPagamento{
+public class FilaPagamento {
     private ArrayList<Cliente> fila = new ArrayList<Cliente>();
 
     public void addCliente(Cliente cliente) {
@@ -41,5 +36,5 @@ public class FilaPagamento{
             return true;
         }
     }
-    
+
 }
