@@ -31,19 +31,18 @@ public class TelaPrincipal extends javax.swing.JFrame {
         
     }
 
-    private void trocaForm(JPanel novoPainel) {
+    public void trocaForm(JPanel novoPainel) {
 	this.getContentPane().setVisible(false);
 	this.setContentPane(novoPainel);
 	novoPainel.setVisible(true);
     }
 
-    private void criaMenu() {
+    public void criaMenu() {
         menu = new JMenuBar();
         cliente = new JMenuItem();
         cliente.setText("Adicionar Cliente");
         cliente.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                //System.out.println("aaaaabbbbbb");
                 trocaForm(new NewJPanel());
                 clicouCliente();
             }
@@ -58,7 +57,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         menu.add(estoque);
         relatorio = new JMenuItem();
-        relatorio.setText("Relatório");
+        relatorio.setText("Relatórios");
         relatorio.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 clicouRelatorio();
@@ -209,7 +208,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                                     .addComponent(jButton1))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(812, Short.MAX_VALUE))
+                .addContainerGap(321, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -248,7 +247,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(34, 34, 34))
+                .addGap(25, 25, 25))
         );
 
         pack();
@@ -307,7 +306,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     public void clicouRelatorio() {
-
+        trocaForm(new ViewRelatorio());
     }
 
     public void clicouSobre() {
