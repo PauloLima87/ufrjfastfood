@@ -86,23 +86,22 @@ public class CaixaPagamento extends Thread
         cliente = getFila().getNext();
         atualizaCaixa();
         this.disponivel = false;
-        PanelSimulacao.atualizarClientes();
+        PanelSimulacao.atualizarClientesPagamento();
         if (!efetuarPagamento()) {
             System.out.println("Não foi possivel pagar o pedido...");
             this.disponivel = true;
             this.cliente = null;
-            PanelSimulacao.esvaziarCaixa(this.id);
+            PanelSimulacao.esvaziarCaixaPagamento(this.id);
             return false;
         }
         this.disponivel = true;
-        PanelSimulacao.esvaziarCaixa(this.id);
+        PanelSimulacao.esvaziarCaixaPagamento(this.id);
         System.out.println("Encaminhando produto para a cozinha...");
         return true;
     }
 
     public synchronized void run()
     {
-        System.out.println("sou um caixa de pagamento e estou checando os clientes");
         while(true) {
             try
             {
