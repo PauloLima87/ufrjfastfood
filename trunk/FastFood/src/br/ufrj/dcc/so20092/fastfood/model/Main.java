@@ -1,15 +1,23 @@
 package br.ufrj.dcc.so20092.fastfood.model;
 
 import br.ufrj.dcc.so20092.fastfood.view.TelaPrincipal;
+import java.io.IOException;
 import java.util.concurrent.Semaphore;
 
 public class Main {
     
     public static void main(String[] args) {
         Estoque estoque = new Estoque();
-
-        TelaPrincipal t = new TelaPrincipal();
-        t.setVisible(true);
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                try {
+                    new TelaPrincipal().setVisible(true);
+                } catch (Exception e) {
+                    // TODO Auto-generated catch block
+                    //e.printStackTrace();
+                }
+            }
+        });
 
         final int numeroCaixasAtendimento = 3;
         Semaphore sem = new Semaphore(numeroCaixasAtendimento, true);

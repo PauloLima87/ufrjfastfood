@@ -13,7 +13,7 @@ public class Cardapio {
     private ArrayList<Sanduiche> sanduiches = new ArrayList<Sanduiche>();
     private ArrayList<Bebida> bebidas = new ArrayList<Bebida>();
 
-    public static Ingrediente pao = new Ingrediente("pão árabe", 0.5, "fatias");
+   public static Ingrediente pao = new Ingrediente("pão árabe", 0.5, "fatias");
     public static Ingrediente paoForma = new Ingrediente("pão de forma", 0.5, "fatias");
     public static Ingrediente tomate = new Ingrediente("tomate seco", 0.3, "gramas");
     public static Ingrediente creamCheese = new Ingrediente("cream cheese", 2.0, "gramas");

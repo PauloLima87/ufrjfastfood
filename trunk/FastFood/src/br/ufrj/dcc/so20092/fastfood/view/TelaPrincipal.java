@@ -43,7 +43,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         cliente.setText("Adicionar Cliente");
         cliente.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                trocaForm(new NewJPanel());
                 clicouCliente();
             }
         });
@@ -97,9 +96,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTextArea4 = new javax.swing.JTextArea();
+        caixaAtendimento2 = new javax.swing.JTextArea();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jTextArea5 = new javax.swing.JTextArea();
+        caixaAtendimento1 = new javax.swing.JTextArea();
         jScrollPane6 = new javax.swing.JScrollPane();
         fila1 = new javax.swing.JTextArea();
         jScrollPane7 = new javax.swing.JScrollPane();
@@ -107,7 +106,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jScrollPane8 = new javax.swing.JScrollPane();
         fila3 = new javax.swing.JTextArea();
         jScrollPane9 = new javax.swing.JScrollPane();
-        jTextArea9 = new javax.swing.JTextArea();
+        caixaAtendimento0 = new javax.swing.JTextArea();
         jLabel7 = new javax.swing.JLabel();
         clientesRestantes = new javax.swing.JLabel();
 
@@ -117,11 +116,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         setName("UFRJ Fast Food"); // NOI18N
         setResizable(false);
 
-        jLabel1.setText("Caixa Atendimento 1");
+        jLabel1.setText("Caixa Atendimento 0");
 
-        jLabel2.setText("Caixa Atendimento 2");
+        jLabel2.setText("Caixa Atendimento 1");
 
-        jLabel3.setText("Caixa Atendimento 3");
+        jLabel3.setText("Caixa Atendimento 2");
 
         jButton1.setText("Adicionar Cliente");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -140,13 +139,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
-        jTextArea4.setColumns(20);
-        jTextArea4.setRows(5);
-        jScrollPane4.setViewportView(jTextArea4);
+        caixaAtendimento2.setColumns(20);
+        caixaAtendimento2.setRows(5);
+        caixaAtendimento2.setText("Caixa livre");
+        jScrollPane4.setViewportView(caixaAtendimento2);
 
-        jTextArea5.setColumns(20);
-        jTextArea5.setRows(5);
-        jScrollPane5.setViewportView(jTextArea5);
+        caixaAtendimento1.setColumns(20);
+        caixaAtendimento1.setRows(5);
+        caixaAtendimento1.setText("Caixa livre");
+        jScrollPane5.setViewportView(caixaAtendimento1);
 
         fila1.setColumns(20);
         fila1.setRows(5);
@@ -160,9 +161,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
         fila3.setRows(5);
         jScrollPane8.setViewportView(fila3);
 
-        jTextArea9.setColumns(20);
-        jTextArea9.setRows(5);
-        jScrollPane9.setViewportView(jTextArea9);
+        caixaAtendimento0.setColumns(20);
+        caixaAtendimento0.setRows(5);
+        caixaAtendimento0.setText("Caixa livre");
+        jScrollPane9.setViewportView(caixaAtendimento0);
 
         clientesRestantes.setText("0");
 
@@ -182,10 +184,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel1)
                                             .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(23, 23, 23)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jLabel2)
-                                            .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(11, 11, 11)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel2))
+                                        .addGap(12, 12, 12))
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -223,8 +226,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3))
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -253,11 +256,33 @@ public class TelaPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    // Botão adicionar cliente
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    public void adicionarCliente() {
         Cliente cliente = new Cliente();
         FilaAtendimento fa = CaixaAtendimento.getFila();
-        fa.addCliente(cliente);        
+        fa.addCliente(cliente);
+    }
+
+    public static void esvaziarCaixa(Integer id) {
+        System.out.println("vou esvaziar a caixa " + id);
+        if (id == 0) {
+        System.out.println("entrei em esvaziar caixa");
+            TelaPrincipal.caixaAtendimento0.setText("Caixa livre");
+        } else if (id == 1) {
+            System.out.println("entrei em esvaziar caixa");
+            TelaPrincipal.caixaAtendimento1.setText("Caixa livre");
+        } else if (id == 2) {
+            System.out.println("entrei em esvaziar caixa");
+            TelaPrincipal.caixaAtendimento2.setText("Caixa livre");
+        }
+    }
+
+    public static void atualizarClientes() {
+        fila1.setText("");
+        fila2.setText("");
+        fila3.setText("");
+
+        Cliente cliente = new Cliente();
+        FilaAtendimento fa = CaixaAtendimento.getFila();
         String pedido = "";
         Integer i = 0;
         Integer j = 0;
@@ -267,7 +292,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             for (ItemPedido item : itensPedido) {
                 String produto = item.getProduto().getNome();
                 Integer quantidade = item.getQuantidade();
-                pedido += produto+" - " + quantidade + "\n";
+                pedido += produto+ " - " + quantidade + "\n";
             }
             if (i == 1) {
                 j++;
@@ -282,23 +307,21 @@ public class TelaPrincipal extends javax.swing.JFrame {
             pedido = "";
         }
         String s = String.valueOf(fa.getFila().size() - j);
-        getClientesRestantes().setText(s);
+        clientesRestantes.setText(s);
+    }
+
+    // Botão adicionar cliente
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        atualizarClientes();
+        adicionarCliente();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void clienteActionPerformed(java.awt.event.ActionEvent evt) {
         trocaForm(new PanelEstoque());
-        System.out.println("aaaaa");
     }
 
     public void clicouCliente() {
-        Cliente cliente = new Cliente();
-        /*
-
-        Cliente cliente = new Cliente();
-        //FilaAtendimento fila = new FilaAtendimento();
-        FilaAtendimento.addClienteFilaGlobal(cliente);
-        System.out.println(FilaAtendimento.getClienteFilaGlobal().getPedido().getValorTotal());
-         */
+        trocaForm(telaPedido);
     }
 
     public void clicouEstoque() {
@@ -306,6 +329,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     public void clicouRelatorio() {
+        System.out.println("asdf");
         trocaForm(new ViewRelatorio());
     }
 
@@ -317,10 +341,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel clientesRestantes;
-    private javax.swing.JTextArea fila1;
-    private javax.swing.JTextArea fila2;
-    private javax.swing.JTextArea fila3;
+    public static javax.swing.JTextArea caixaAtendimento0;
+    public static javax.swing.JTextArea caixaAtendimento1;
+    public static javax.swing.JTextArea caixaAtendimento2;
+    public static javax.swing.JLabel clientesRestantes;
+    public static javax.swing.JTextArea fila1;
+    public static javax.swing.JTextArea fila2;
+    public static javax.swing.JTextArea fila3;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -337,9 +364,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea4;
-    private javax.swing.JTextArea jTextArea5;
-    private javax.swing.JTextArea jTextArea9;
     // End of variables declaration//GEN-END:variables
 
     /**
@@ -361,30 +385,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
      * @return the jTextArea4
      */
     public javax.swing.JTextArea getjTextArea4() {
-        return jTextArea4;
+        return caixaAtendimento2;
     }
 
-    /**
-     * @param jTextArea4 the jTextArea4 to set
-     */
-    public void setjTextArea4(javax.swing.JTextArea jTextArea4) {
-        this.jTextArea4 = jTextArea4;
-    }
-
-    /**
-     * @return the jTextArea5
-     */
     public javax.swing.JTextArea getjTextArea5() {
-        return jTextArea5;
+        return caixaAtendimento1;
     }
-
-    /**
-     * @param jTextArea5 the jTextArea5 to set
-     */
-    public void setjTextArea5(javax.swing.JTextArea jTextArea5) {
-        this.jTextArea5 = jTextArea5;
-    }
-
     /**
      * @return the jTextArea6
      */
@@ -411,14 +417,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
      * @return the jTextArea8
      */
     public javax.swing.JTextArea getjTextArea9() {
-        return jTextArea9;
-    }
-
-    /**
-     * @param jTextArea8 the jTextArea8 to set
-     */
-    public void setjTextArea9(javax.swing.JTextArea jTextArea9) {
-        this.jTextArea9 = jTextArea9;
+        return caixaAtendimento0;
     }
 
     /**
