@@ -1,24 +1,31 @@
 package br.ufrj.dcc.so20092.fastfood.model;
 
+import java.util.concurrent.Semaphore;
 
-public class CaixaAtendimento {
+//Solving the mutual exclusion problem using Semaphore class
 
-    private Integer id;
-    private FilaAtendimento filaAtendimento;
+public class CaixaAtendimento extends Thread
+{
+    private static FilaAtendimento fila;
+    private int id;
+    private Semaphore sem;
     private Boolean disponivel;
     private Cliente cliente;
-    
-    public CaixaAtendimento(Integer id, FilaAtendimento filaAtendimento) {
-        this.id = id;
-        this.filaAtendimento = filaAtendimento;
+
+
+    public static FilaAtendimento getFila() {
+        return fila;
     }
 
-    public Integer getId() {
-        return id;
+    public static void setFila(FilaAtendimento aFila) {
+        fila = aFila;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public CaixaAtendimento(int i, Semaphore s)
+    {
+        this.id = i;
+        this.sem = s;
+        System.out.println("CaixaAtendimento " + i + " aberta!");
     }
 
     public Boolean getDisponivel() {
@@ -29,35 +36,50 @@ public class CaixaAtendimento {
         this.disponivel = disponivel;
     }
 
-    public Cliente getProximoCliente() {
-        this.disponivel = false;
-        return filaAtendimento.getNext();
+    private int random(int n)
+    {
+        return (int) Math.round(n * Math.random() - 0.5);
     }
 
-    public void atendeCliente() {
-        /*
-        if (verificarDisponibilidadePedido()) {
-            waitRandomTime();
+    private void waitAtendimento()
+    {
+        try
+        {
+            sleep(random(2000)+1000);
+        } catch (InterruptedException e)
+        {
         }
-        else {
-            System.out.println("Pedido indisponível");
+    }
+
+    private synchronized Boolean verificarDisponibilidadePedido()
+    {
+        System.out.println("Caixa Atendimento " + id + " Verificando disponibilidade do pedido.");
+        waitAtendimento();
+        //System.out.println("Caixa Atendimento " + id + " Verificando disponibilidade do pedido.");
+        return true;
+    }
+
+    public Boolean atende() {
+        this.disponivel = false;
+        cliente = getFila().getNext();
+        if (!verificarDisponibilidadePedido()) {
+            System.out.println("nao foi possivel atender o pedido...");
             this.disponivel = true;
             this.cliente = null;
-            //TODO: garbage colector
+            return false;
         }
-         */
+        return true;
     }
 
+    public void run()
+    {
+        while(true) {
+            if (this.disponivel && !this.fila.filaVazia()) {
+                if (atende()) {
+                        System.out.println("Encaminhando cliente a fila de pagamento.");
+                }
 
-    /*
-    public void getCliente(){
-
-        FilaAtendimento fila = new FilaAtendimento();
-        if(this.disponivel && !FilaAtendimento.filaVazia()){
-            FilaAtendimento.getClienteFilaGlobal();
-
-            System.out.println("PEGOU O CLIENTE");
+            }
         }
     }
-    */
 }

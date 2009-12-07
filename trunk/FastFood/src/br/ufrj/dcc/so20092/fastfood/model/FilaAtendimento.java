@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author kaiser
  */
-public class FilaAtendimento extends Main{
+public class FilaAtendimento extends Main2{
     private ArrayList<Cliente> fila = new ArrayList<Cliente>();
 
     public void addCliente(Cliente cliente) {
