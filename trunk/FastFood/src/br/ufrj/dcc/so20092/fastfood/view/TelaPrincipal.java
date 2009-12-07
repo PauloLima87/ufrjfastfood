@@ -287,8 +287,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void clienteActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
-        trocaForm(new Estoque());
+        trocaForm(new PanelEstoque());
         System.out.println("aaaaa");
     }
 
@@ -304,8 +303,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     public void clicouEstoque() {
-        System.out.println("veio");
-        trocaForm(new Estoque2());
+        trocaForm(new PanelEstoque());
     }
 
     public void clicouRelatorio() {

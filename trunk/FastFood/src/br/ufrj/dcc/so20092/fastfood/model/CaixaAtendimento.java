@@ -88,7 +88,7 @@ public class CaixaAtendimento extends Thread
                 sem.acquire();
             } catch (InterruptedException e)
             {
-                System.out.println()
+                System.out.println();
                 // ...
             }
             if (this.disponivel && !(this.fila.getFila().size() == 0)) {
