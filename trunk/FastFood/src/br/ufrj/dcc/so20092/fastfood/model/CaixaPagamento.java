@@ -88,7 +88,7 @@ public class CaixaPagamento extends Thread
         this.disponivel = false;
         PanelSimulacao.atualizarClientesPagamento();
         if (!efetuarPagamento()) {
-            System.out.println("Não foi possivel pagar o pedido...");
+            System.out.println("Não foi possivel efetuar o pagamento do pedido...");
             this.disponivel = true;
             this.cliente = null;
             PanelSimulacao.esvaziarCaixaPagamento(this.id);
@@ -112,6 +112,7 @@ public class CaixaPagamento extends Thread
             }
             if (this.disponivel && !(this.fila.getFila().size() == 0)) {
                 atende();
+                System.out.println(">>>>>>>>>>>>>>>>>fila de pagamento" + CaixaAtendimento.getFila().getFila().size());
             }
             sem.release();
         }
