@@ -6,6 +6,7 @@ import br.ufrj.dcc.so20092.fastfood.model.FilaAtendimento;
 import br.ufrj.dcc.so20092.fastfood.model.ItemPedido;
 import br.ufrj.dcc.so20092.fastfood.model.Pedido;
 import br.ufrj.dcc.so20092.fastfood.model.Pedido;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.HashSet;
@@ -266,12 +267,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
         System.out.println("vou esvaziar a caixa " + id);
         if (id == 0) {
         System.out.println("entrei em esvaziar caixa");
+            TelaPrincipal.caixaAtendimento0.setBackground(new Color(0, 255, 0));
             TelaPrincipal.caixaAtendimento0.setText("Caixa livre");
         } else if (id == 1) {
             System.out.println("entrei em esvaziar caixa");
+            TelaPrincipal.caixaAtendimento1.setBackground(new Color(0, 255, 0));
             TelaPrincipal.caixaAtendimento1.setText("Caixa livre");
         } else if (id == 2) {
             System.out.println("entrei em esvaziar caixa");
+            TelaPrincipal.caixaAtendimento2.setBackground(new Color(0, 255, 0));
             TelaPrincipal.caixaAtendimento2.setText("Caixa livre");
         }
     }
