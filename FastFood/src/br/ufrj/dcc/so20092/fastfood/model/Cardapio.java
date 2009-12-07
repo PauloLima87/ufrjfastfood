@@ -12,6 +12,25 @@ public class Cardapio {
 
     private ArrayList<Sanduiche> sanduiches = new ArrayList<Sanduiche>();
     private ArrayList<Bebida> bebidas = new ArrayList<Bebida>();
+
+    public static Ingrediente pao = new Ingrediente("pão árabe", 0.5);
+    public static Ingrediente paoForma = new Ingrediente("pão de forma", 0.5);
+    public static Ingrediente tomate = new Ingrediente("tomate seco", 0.3);
+    public static Ingrediente creamCheese = new Ingrediente("cream cheese", 2.0);
+    public static Ingrediente presuntoParma = new Ingrediente("presunto parma", 1.0);
+    public static Ingrediente rucula = new Ingrediente("rúcula", 0.3);
+    public static Ingrediente queijoMinas = new Ingrediente("queijo minas", 0.4);
+    public static Ingrediente azeite = new Ingrediente("azeite", 1.0);
+    public static Ingrediente koka = new Ingrediente("lata de koka-cola", 2.0);
+    public static Ingrediente ispraite = new Ingrediente("lata de ispraite", 2.0);
+    public static Ingrediente phanta = new Ingrediente("lata de phanta", 2.0);
+    public static Ingrediente peitoPeru = new Ingrediente("peito de peru", 1.0);
+    public static Ingrediente alface = new Ingrediente("alface", 0.3);
+    public static Ingrediente requeijao = new Ingrediente("requeijão", 1.0);
+    public static Ingrediente peitoFrango = new Ingrediente("peito de frango", 1.0);
+    public static Ingrediente cenoura = new Ingrediente("cenoura", 0.4);
+    public static Ingrediente beterraba = new Ingrediente("beterraba", 0.8);
+
     /*Sanduiches:
 - Frango com abacaxi
 Um pão de leite, 150 gramas de peito de frango grelhado, 50g de abacaxi.
@@ -22,23 +41,6 @@ Duas metades de pão árabe, 100g de queijo minas, 5g de orégano e 35g de tomat
 */
 
     public Cardapio() {
-        Ingrediente pao = new Ingrediente("pão árabe", 0.5);
-        Ingrediente paoForma = new Ingrediente("pão de forma", 0.5);
-        Ingrediente tomate = new Ingrediente("tomate seco", 0.3);
-        Ingrediente creamCheese = new Ingrediente("cream cheese", 2.0);
-        Ingrediente presuntoParma = new Ingrediente("presunto parma", 1.0);
-        Ingrediente rucula = new Ingrediente("rúcula", 0.3);
-        Ingrediente queijoMinas = new Ingrediente("queijo minas", 0.4);
-        Ingrediente azeite = new Ingrediente("azeite", 1.0);
-        Ingrediente koka = new Ingrediente("lata de koka-cola", 2.0);
-        Ingrediente ispraite = new Ingrediente("lata de ispraite", 2.0);
-        Ingrediente phanta = new Ingrediente("lata de phanta", 2.0);
-        Ingrediente peitoPeru = new Ingrediente("peito de peru", 1.0);
-        Ingrediente alface = new Ingrediente("alface", 0.3);
-        Ingrediente requeijao = new Ingrediente("requeijão", 1.0);
-        Ingrediente peitoFrango = new Ingrediente("peito de frango", 1.0);
-        Ingrediente cenoura = new Ingrediente("cenoura", 0.4);
-        Ingrediente beterraba = new Ingrediente("beterraba", 0.8);
 
         HashSet<ItemProduto> itens = new HashSet<ItemProduto>();
         ItemProduto ip = new ItemProduto(pao, 2);

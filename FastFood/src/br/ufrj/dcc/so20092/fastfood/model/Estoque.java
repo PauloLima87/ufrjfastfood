@@ -7,9 +7,23 @@ public class Estoque {
 
     public Estoque () {
         itemEstoque = new HashSet<ItemEstoque>();
-        //itemEstoque.add(new ItemEstoque(new Ingrediente("alfafa",0.75),1000));
-        //itemEstoque.add(new ItemEstoque(new Ingrediente("alfofo",3.75),2000));
-        //itemEstoque.add(new ItemEstoque(new Ingrediente("alfifi",5.69),3000));
+        itemEstoque.add(new ItemEstoque(Cardapio.alface, 1000));
+        itemEstoque.add(new ItemEstoque(Cardapio.azeite, 1000));
+        itemEstoque.add(new ItemEstoque(Cardapio.beterraba, 1000));
+        itemEstoque.add(new ItemEstoque(Cardapio.cenoura, 1000));
+        itemEstoque.add(new ItemEstoque(Cardapio.creamCheese, 1000));
+        itemEstoque.add(new ItemEstoque(Cardapio.ispraite, 1000));
+        itemEstoque.add(new ItemEstoque(Cardapio.koka, 1000));
+        itemEstoque.add(new ItemEstoque(Cardapio.pao, 1000));
+        itemEstoque.add(new ItemEstoque(Cardapio.paoForma, 1000));
+        itemEstoque.add(new ItemEstoque(Cardapio.peitoFrango, 1000));
+        itemEstoque.add(new ItemEstoque(Cardapio.peitoPeru, 1000));
+        itemEstoque.add(new ItemEstoque(Cardapio.phanta, 1000));
+        itemEstoque.add(new ItemEstoque(Cardapio.presuntoParma, 1000));
+        itemEstoque.add(new ItemEstoque(Cardapio.queijoMinas, 1000));
+        itemEstoque.add(new ItemEstoque(Cardapio.requeijao, 1000));
+        itemEstoque.add(new ItemEstoque(Cardapio.rucula, 1000));
+        itemEstoque.add(new ItemEstoque(Cardapio.tomate, 1000));
     }
 
     public HashSet<ItemEstoque> getItemEstoque() {
