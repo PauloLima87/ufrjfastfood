@@ -1,29 +1,25 @@
 package br.ufrj.dcc.so20092.fastfood.model;
 
 import br.ufrj.dcc.so20092.fastfood.view.TelaPrincipal;
+import java.util.concurrent.Semaphore;
 
 public class Main {
-
-    //fila de atendimento
-    /*
-     * 
-    static FilaAtendimento filaAtendimento = new FilaAtendimento();
-
-    CaixaAtendimento caixa1 = new CaixaAtendimento(new Integer(1));
-    CaixaAtendimento caixa2 = new CaixaAtendimento(new Integer(2));
-    CaixaAtendimento caixa3 = new CaixaAtendimento(new Integer(3));
-    */
     
     public static void main(String[] args) {
         TelaPrincipal t = new TelaPrincipal();
         t.setVisible(true);
 
-        //CaixaAtendimento fa = new CaixaAtendimento(new Integer(4));
-        //fa.getCliente();
-        //caixa1.start();
-        //caixa2.start();
-        //caixa3.start();
+        final int numeroCaixasAtendimento = 3;
+        Semaphore sem = new Semaphore(numeroCaixasAtendimento, true);
 
+        CaixaAtendimento caixas[] = new CaixaAtendimento[numeroCaixasAtendimento];
 
+        for (int i = 0; i < numeroCaixasAtendimento; i++)
+        {
+            FilaAtendimento filaAtendimento = new FilaAtendimento();
+            CaixaAtendimento.setFila(filaAtendimento);
+            caixas[i] = new CaixaAtendimento(i, sem);
+            caixas[i].start();
+        }
     }
 }

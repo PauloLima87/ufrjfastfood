@@ -9,7 +9,7 @@ public class CaixaAtendimento extends Thread
     private static FilaAtendimento fila;
     private int id;
     private Semaphore sem;
-    private Boolean disponivel;
+    private Boolean disponivel = true;
     private Cliente cliente;
 
 
@@ -59,9 +59,12 @@ public class CaixaAtendimento extends Thread
         return true;
     }
 
-    public Boolean atende() {
+    public synchronized Boolean atende() {
+
+        System.out.println("Iniciando atendimento do cliente");
         this.disponivel = false;
         cliente = getFila().getNext();
+        System.out.println("Checando disponibilidade do pedido");
         if (!verificarDisponibilidadePedido()) {
             System.out.println("nao foi possivel atender o pedido...");
             this.disponivel = true;
@@ -71,15 +74,29 @@ public class CaixaAtendimento extends Thread
         return true;
     }
 
-    public void run()
+    public synchronized void run()
     {
         while(true) {
-            if (this.disponivel && !this.fila.filaVazia()) {
-                if (atende()) {
-                        System.out.println("Encaminhando cliente a fila de pagamento.");
-                }
+/*
+            System.out.println(this.disponivel);
+            System.out.println(this.fila.getFila().size());
+            System.out.println("Thread " + this.id);
+*/
 
+            try
+            {
+                sem.acquire();
+            } catch (InterruptedException e)
+            {
+                System.out.println()
+                // ...
             }
+            if (this.disponivel && !(this.fila.getFila().size() == 0)) {
+                if (atende()) {
+                    System.out.println("Encaminhando cliente a fila de pagamento.");
+                }
+            }
+            sem.release();
         }
     }
 }
