@@ -13,23 +13,23 @@ public class Cardapio {
     private ArrayList<Sanduiche> sanduiches = new ArrayList<Sanduiche>();
     private ArrayList<Bebida> bebidas = new ArrayList<Bebida>();
 
-    public static Ingrediente pao = new Ingrediente("pão árabe", 0.5);
-    public static Ingrediente paoForma = new Ingrediente("pão de forma", 0.5);
-    public static Ingrediente tomate = new Ingrediente("tomate seco", 0.3);
-    public static Ingrediente creamCheese = new Ingrediente("cream cheese", 2.0);
-    public static Ingrediente presuntoParma = new Ingrediente("presunto parma", 1.0);
-    public static Ingrediente rucula = new Ingrediente("rúcula", 0.3);
-    public static Ingrediente queijoMinas = new Ingrediente("queijo minas", 0.4);
-    public static Ingrediente azeite = new Ingrediente("azeite", 1.0);
-    public static Ingrediente koka = new Ingrediente("lata de koka-cola", 2.0);
-    public static Ingrediente ispraite = new Ingrediente("lata de ispraite", 2.0);
-    public static Ingrediente phanta = new Ingrediente("lata de phanta", 2.0);
-    public static Ingrediente peitoPeru = new Ingrediente("peito de peru", 1.0);
-    public static Ingrediente alface = new Ingrediente("alface", 0.3);
-    public static Ingrediente requeijao = new Ingrediente("requeijão", 1.0);
-    public static Ingrediente peitoFrango = new Ingrediente("peito de frango", 1.0);
-    public static Ingrediente cenoura = new Ingrediente("cenoura", 0.4);
-    public static Ingrediente beterraba = new Ingrediente("beterraba", 0.8);
+    public static Ingrediente pao = new Ingrediente("pão árabe", 0.5, "fatias");
+    public static Ingrediente paoForma = new Ingrediente("pão de forma", 0.5, "fatias");
+    public static Ingrediente tomate = new Ingrediente("tomate seco", 0.3, "gramas");
+    public static Ingrediente creamCheese = new Ingrediente("cream cheese", 2.0, "gramas");
+    public static Ingrediente presuntoParma = new Ingrediente("presunto parma", 1.0, "gramas");
+    public static Ingrediente rucula = new Ingrediente("rúcula", 0.3, "gramas");
+    public static Ingrediente queijoMinas = new Ingrediente("queijo minas", 0.4, "gramas");
+    public static Ingrediente azeite = new Ingrediente("azeite", 1.0, "gramas");
+    public static Ingrediente koka = new Ingrediente("lata de koka-cola", 2.0, "latas");
+    public static Ingrediente ispraite = new Ingrediente("lata de ispraite", 2.0, "latas");
+    public static Ingrediente phanta = new Ingrediente("lata de phanta", 2.0, "latas");
+    public static Ingrediente peitoPeru = new Ingrediente("peito de peru", 1.0, "gramas");
+    public static Ingrediente alface = new Ingrediente("alface", 0.3, "gramas");
+    public static Ingrediente requeijao = new Ingrediente("requeijão", 1.0, "gramas");
+    public static Ingrediente peitoFrango = new Ingrediente("peito de frango", 1.0, "gramas");
+    public static Ingrediente cenoura = new Ingrediente("cenoura", 0.4, "gramas");
+    public static Ingrediente beterraba = new Ingrediente("beterraba", 0.8, "gramas");
 
     /*Sanduiches:
 - Frango com abacaxi

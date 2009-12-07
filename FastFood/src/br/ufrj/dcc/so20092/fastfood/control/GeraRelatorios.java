@@ -17,7 +17,11 @@ import java.util.HashSet;
  */
 public class GeraRelatorios {
 
+<<<<<<< .mine
+    HashSet<ItemEstoque> itensEstoque = Estoque.itensEstoque;
+=======
     static HashSet<ItemEstoque> itens = Estoque.itensEstoque;
+>>>>>>> .r52
 
     public static boolean criaArquivoRelatorioDiario() {
 
