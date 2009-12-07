@@ -35,11 +35,11 @@ public class Main {
             caixasAtendimento[i] = new CaixaAtendimento(i, semCaixasAtendimento);
             caixasAtendimento[i].start();
         }
-        /*
+        
         for (int i = 0; i < numeroCaixasPagamento; i++)
         {
             caixasPagamento[i] = new CaixaPagamento(i, semCaixasPagamento);
             caixasPagamento[i].start();
-        }*/
+        }
     }
 }
