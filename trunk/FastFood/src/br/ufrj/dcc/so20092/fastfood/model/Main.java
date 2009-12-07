@@ -7,14 +7,6 @@ public class Main {
     
     public static void main(String[] args) {
         Estoque estoque = new Estoque();
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    new TelaPrincipal().setVisible(true);
-                } catch (Exception e) {
-                }
-            }
-        });
 
         final int numeroCaixasAtendimento = 3;
         final int numeroCaixasPagamento = 3;
@@ -23,7 +15,6 @@ public class Main {
 
         CaixaAtendimento caixasAtendimento[] = new CaixaAtendimento[numeroCaixasAtendimento];
         CaixaPagamento caixasPagamento[] = new CaixaPagamento[numeroCaixasPagamento];
-        System.out.println("c");
 
         FilaAtendimento filaAtendimento = new FilaAtendimento();
         FilaPagamento filaPagamento = new FilaPagamento();
@@ -41,5 +32,14 @@ public class Main {
             caixasPagamento[i] = new CaixaPagamento(i, semCaixasPagamento);
             caixasPagamento[i].start();
         }
+
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                try {
+                    new TelaPrincipal().setVisible(true);
+                } catch (Exception e) {
+                }
+            }
+        });
     }
 }
