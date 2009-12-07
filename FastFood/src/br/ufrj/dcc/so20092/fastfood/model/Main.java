@@ -6,6 +6,8 @@ import java.util.concurrent.Semaphore;
 public class Main {
     
     public static void main(String[] args) {
+        Estoque estoque = new Estoque();
+
         TelaPrincipal t = new TelaPrincipal();
         t.setVisible(true);
 
