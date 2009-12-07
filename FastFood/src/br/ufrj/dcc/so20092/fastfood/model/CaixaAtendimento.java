@@ -98,6 +98,7 @@ public class CaixaAtendimento extends Thread
         this.disponivel = true;
         PanelSimulacao.esvaziarCaixa(this.id);
         System.out.println("Encaminhando cliente a fila de pagamento.");
+        CaixaPagamento.getFila().addCliente(cliente);
         return true;
     }
 

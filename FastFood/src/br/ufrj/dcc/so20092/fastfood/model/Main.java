@@ -6,9 +6,6 @@ import java.util.concurrent.Semaphore;
 public class Main {
     
     public static void main(String[] args) {
-        System.out.print("a");
-        FilaPagamento fp = new FilaPagamento();
-        System.out.print("b");
         Estoque estoque = new Estoque();
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
