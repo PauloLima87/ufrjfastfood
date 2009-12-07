@@ -1,6 +1,7 @@
 package br.ufrj.dcc.so20092.fastfood.model;
 
 import br.ufrj.dcc.so20092.fastfood.view.TelaPrincipal;
+import java.awt.Color;
 import java.util.HashSet;
 import java.util.concurrent.Semaphore;
 
@@ -63,22 +64,21 @@ public class CaixaAtendimento extends Thread
 
     public synchronized void atualizaCaixa() {
         String pedido = "";
-        try {
-            HashSet<ItemPedido> itensPedido = this.cliente.getPedido().getItem();
-            for (ItemPedido item : itensPedido) {
-                String produto = item.getProduto().getNome();
-                Integer quantidade = item.getQuantidade();
-                pedido += produto + " - " + quantidade + "\n";
-            }
-            if (this.id == 0) {
-                TelaPrincipal.caixaAtendimento0.setText(pedido);
-            } else if (this.id == 1) {
-                TelaPrincipal.caixaAtendimento1.setText(pedido);
-            } else if (this.id == 2) {
-                TelaPrincipal.caixaAtendimento2.setText(pedido);
-            }
-        } catch(Exception e) {
-            System.out.println("Erro no atualizar caixa...");
+        HashSet<ItemPedido> itensPedido = this.cliente.getPedido().getItem();
+        for (ItemPedido item : itensPedido) {
+            String produto = item.getProduto().getNome();
+            Integer quantidade = item.getQuantidade();
+            pedido += produto + " - " + quantidade + "\n";
+        }
+        if (this.id == 0) {
+            TelaPrincipal.caixaAtendimento0.setBackground(new Color(255, 0, 0));
+            TelaPrincipal.caixaAtendimento0.setText(pedido);
+        } else if (this.id == 1) {
+            TelaPrincipal.caixaAtendimento1.setBackground(new Color(255, 0, 0));
+            TelaPrincipal.caixaAtendimento1.setText(pedido);
+        } else if (this.id == 2) {
+            TelaPrincipal.caixaAtendimento2.setBackground(new Color(255, 0, 0));
+            TelaPrincipal.caixaAtendimento2.setText(pedido);
         }
     }
     
