@@ -99,12 +99,12 @@ public class CaixaAtendimento extends Thread
         PanelSimulacao.esvaziarCaixa(this.id);
         System.out.println("Encaminhando cliente a fila de pagamento.");
         CaixaPagamento.getFila().addCliente(cliente);
+        System.out.println(CaixaPagamento.getFila().getFila().size());
         return true;
     }
 
     public synchronized void run()
     {
-        System.out.println("cheguei no run");
         while(true) {
 
             try
@@ -114,12 +114,10 @@ public class CaixaAtendimento extends Thread
             {
                 // ...
             }
-//            synchronized(fila) {
             if (this.disponivel && !(this.fila.getFila().size() == 0)) {
                 atende();
             }
             sem.release();
-  //          }
         }
     }
 }
