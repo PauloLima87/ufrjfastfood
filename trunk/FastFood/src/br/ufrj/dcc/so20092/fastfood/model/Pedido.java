@@ -19,7 +19,7 @@ public class Pedido {
             return item;
 	}
 	public void setItem(HashSet<ItemPedido> item) {
-            this.item = item;
+            this.setItem(item);
 	}
 	public double getValorTotal() {
             return valorTotal;
@@ -40,14 +40,17 @@ public class Pedido {
             this.status = status;
 	}
     
-	public void calculaValorTotal() {
-    	double valor = 0.0;
-    	for (ItemPedido itemPedido : item)
-            valor += itemPedido.getQuantidade() * itemPedido.getProduto().getValorUnidade();
+	public double calculaValorTotal() {
+            double valor = 0.0;
+            for (ItemPedido itemPedido : getItem()){
+                valor += itemPedido.getQuantidade() * itemPedido.getProduto().getValorUnidade();
+            }
             setValorTotal(valor);
+            return valor;
 	}
-    
+
     public void adiciona(Produto produto, Integer quantidade) {
-    	this.item.add(new ItemPedido(produto, quantidade));
+    	this.getItem().add(new ItemPedido(produto, quantidade));
     }
 }
+
