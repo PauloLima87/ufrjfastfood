@@ -1,6 +1,6 @@
 package br.ufrj.dcc.so20092.fastfood.model;
 
-import br.ufrj.dcc.so20092.fastfood.view.TelaPrincipal;
+import br.ufrj.dcc.so20092.fastfood.view.PanelSimulacao;
 import java.awt.Color;
 import java.util.HashSet;
 import java.util.concurrent.Semaphore;
@@ -71,14 +71,14 @@ public class CaixaAtendimento extends Thread
             pedido += produto + " - " + quantidade + "\n";
         }
         if (this.id == 0) {
-            TelaPrincipal.caixaAtendimento0.setBackground(new Color(255, 0, 0));
-            TelaPrincipal.caixaAtendimento0.setText(pedido);
+            PanelSimulacao.caixaAtendimento0.setBackground(new Color(255, 0, 0));
+            PanelSimulacao.caixaAtendimento0.setText(pedido);
         } else if (this.id == 1) {
-            TelaPrincipal.caixaAtendimento1.setBackground(new Color(255, 0, 0));
-            TelaPrincipal.caixaAtendimento1.setText(pedido);
+            PanelSimulacao.caixaAtendimento1.setBackground(new Color(255, 0, 0));
+            PanelSimulacao.caixaAtendimento1.setText(pedido);
         } else if (this.id == 2) {
-            TelaPrincipal.caixaAtendimento2.setBackground(new Color(255, 0, 0));
-            TelaPrincipal.caixaAtendimento2.setText(pedido);
+            PanelSimulacao.caixaAtendimento2.setBackground(new Color(255, 0, 0));
+            PanelSimulacao.caixaAtendimento2.setText(pedido);
         }
     }
     
@@ -87,16 +87,16 @@ public class CaixaAtendimento extends Thread
         cliente = getFila().getNext();
         atualizaCaixa();
         this.disponivel = false;
-        TelaPrincipal.atualizarClientes();
+        PanelSimulacao.atualizarClientes();
         if (!verificarDisponibilidadePedido()) {
             System.out.println("Não foi possivel atender o pedido...");
             this.disponivel = true;
             this.cliente = null;
-            TelaPrincipal.esvaziarCaixa(this.id);
+            PanelSimulacao.esvaziarCaixa(this.id);
             return false;
         }
         this.disponivel = true;
-        TelaPrincipal.esvaziarCaixa(this.id);
+        PanelSimulacao.esvaziarCaixa(this.id);
         System.out.println("Encaminhando cliente a fila de pagamento.");
         return true;
     }
