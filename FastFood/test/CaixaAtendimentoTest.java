@@ -2,7 +2,7 @@ import br.ufrj.dcc.so20092.fastfood.model.CaixaAtendimento;
 
 import br.ufrj.dcc.so20092.fastfood.model.Cliente;
 import br.ufrj.dcc.so20092.fastfood.model.Estoque;
-import br.ufrj.dcc.so20092.fastfood.model.FilaAtendimento;
+import br.ufrj.dcc.so20092.fastfood.model.FilaPagamento;
 import br.ufrj.dcc.so20092.fastfood.model.Ingrediente;
 import br.ufrj.dcc.so20092.fastfood.model.ItemEstoque;
 import junit.framework.TestCase;
@@ -10,13 +10,13 @@ import junit.framework.TestCase;
 
 public class CaixaAtendimentoTest extends TestCase {
     public void testConstrutor() {
-        FilaAtendimento fa = new FilaAtendimento();
+        FilaPagamento fa = new FilaPagamento();
         CaixaAtendimento ca = new CaixaAtendimento(1, fa);
         assertEquals(ca.getId(), new Integer(1));
     }
 
     public void testGetNext() {
-        FilaAtendimento fa = new FilaAtendimento();
+        FilaPagamento fa = new FilaPagamento();
         CaixaAtendimento c1 = new CaixaAtendimento(1, fa);
         CaixaAtendimento c2 = new CaixaAtendimento(2, fa);
         CaixaAtendimento c3 = new CaixaAtendimento(3, fa);

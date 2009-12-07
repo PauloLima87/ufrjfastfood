@@ -4,11 +4,11 @@ package br.ufrj.dcc.so20092.fastfood.model;
 public class CaixaAtendimentoBackup {
 
     private Integer id;
-    private FilaAtendimento filaAtendimento;
+    private FilaPagamento filaAtendimento;
     private Boolean disponivel;
     private Cliente cliente;
     
-    public CaixaAtendimentoBackup(Integer id, FilaAtendimento filaAtendimento) {
+    public CaixaAtendimentoBackup(Integer id, FilaPagamento filaAtendimento) {
         this.id = id;
         this.filaAtendimento = filaAtendimento;
     }
@@ -52,9 +52,9 @@ public class CaixaAtendimentoBackup {
     /*
     public void getCliente(){
 
-        FilaAtendimento fila = new FilaAtendimento();
-        if(this.disponivel && !FilaAtendimento.filaVazia()){
-            FilaAtendimento.getClienteFilaGlobal();
+        FilaPagamento fila = new FilaPagamento();
+        if(this.disponivel && !FilaPagamento.filaVazia()){
+            FilaPagamento.getClienteFilaGlobal();
 
             System.out.println("PEGOU O CLIENTE");
         }

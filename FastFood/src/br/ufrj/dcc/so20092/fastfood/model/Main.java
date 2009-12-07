@@ -1,7 +1,6 @@
 package br.ufrj.dcc.so20092.fastfood.model;
 
 import br.ufrj.dcc.so20092.fastfood.view.TelaPrincipal;
-import java.io.IOException;
 import java.util.concurrent.Semaphore;
 
 public class Main {
@@ -13,23 +12,34 @@ public class Main {
                 try {
                     new TelaPrincipal().setVisible(true);
                 } catch (Exception e) {
-                    // TODO Auto-generated catch block
-                    //e.printStackTrace();
                 }
             }
         });
 
         final int numeroCaixasAtendimento = 3;
-        Semaphore sem = new Semaphore(numeroCaixasAtendimento, true);
+        final int numeroCaixasPagamento = 3;
+        Semaphore semCaixasAtendimento = new Semaphore(numeroCaixasAtendimento, true);
+        Semaphore semCaixasPagamento = new Semaphore(numeroCaixasPagamento, true);
 
-        CaixaAtendimento caixas[] = new CaixaAtendimento[numeroCaixasAtendimento];
+        CaixaAtendimento caixasAtendimento[] = new CaixaAtendimento[numeroCaixasAtendimento];
+        CaixaPagamento caixasPagamento[] = new CaixaPagamento[numeroCaixasPagamento];
+        System.out.println("c");
+
+        FilaAtendimento filaAtendimento = new FilaAtendimento();
+        FilaPagamento filaPagamento = new FilaPagamento();
+        CaixaAtendimento.setFila(filaAtendimento);
+        CaixaPagamento.setFila(filaPagamento);
 
         for (int i = 0; i < numeroCaixasAtendimento; i++)
         {
-            FilaAtendimento filaAtendimento = new FilaAtendimento();
-            CaixaAtendimento.setFila(filaAtendimento);
-            caixas[i] = new CaixaAtendimento(i, sem);
-            caixas[i].start();
+            caixasAtendimento[i] = new CaixaAtendimento(i, semCaixasAtendimento);
+            caixasAtendimento[i].start();
         }
+        /*
+        for (int i = 0; i < numeroCaixasPagamento; i++)
+        {
+            caixasPagamento[i] = new CaixaPagamento(i, semCaixasPagamento);
+            caixasPagamento[i].start();
+        }*/
     }
 }

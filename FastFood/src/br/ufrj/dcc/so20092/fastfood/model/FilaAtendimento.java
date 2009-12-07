@@ -36,21 +36,4 @@ public class FilaAtendimento {
             return true;
         }
     }
-/*
-    public static void addClienteFilaGlobal(Cliente cliente){
-        filaAtendimento.addCliente(cliente);
-    }
-
-    public static Cliente getClienteFilaGlobal(){
-        try {
-            return filaAtendimento.getNext();
-        } catch (Exception e) {
-            return new Cliente();
-        }
-    }
-
-    public static Integer getSizeFilaGlobal(){
-        return filaAtendimento.size();
-    }
-    */
 }
