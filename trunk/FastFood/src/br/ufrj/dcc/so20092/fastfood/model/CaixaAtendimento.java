@@ -113,12 +113,12 @@ public class CaixaAtendimento extends Thread
             {
                 // ...
             }
-            synchronized(fila) {
+//            synchronized(fila) {
             if (this.disponivel && !(this.fila.getFila().size() == 0)) {
                 atende();
             }
             sem.release();
-            }
+  //          }
         }
     }
 }
