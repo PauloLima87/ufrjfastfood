@@ -116,6 +116,7 @@ public class CaixaAtendimento extends Thread
             }
             if (this.disponivel && !(this.fila.getFila().size() == 0)) {
                 atende();
+                System.out.println(">>>>>>>>>>>>>>>>>fila de atendimento" + CaixaAtendimento.getFila().getFila().size());
             }
             sem.release();
         }
