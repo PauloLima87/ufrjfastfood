@@ -17,11 +17,7 @@ import java.util.HashSet;
  */
 public class GeraRelatorios {
 
-<<<<<<< .mine
-    HashSet<ItemEstoque> itensEstoque = Estoque.itensEstoque;
-=======
     static HashSet<ItemEstoque> itens = Estoque.itensEstoque;
->>>>>>> .r52
 
     public static boolean criaArquivoRelatorioDiario() {
 
@@ -44,6 +40,8 @@ public class GeraRelatorios {
                     pw.write(item.getIngrediente().getNome());
                     pw.write(" possui ");
                     pw.write(String.valueOf(item.getQuantidade()));
+                    pw.write(" ");
+                    pw.write(String.valueOf(item.getIngrediente().getUnidade()));
                     pw.write(" em estoque.");
 
                     pw.write(13);

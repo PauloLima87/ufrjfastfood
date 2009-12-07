@@ -1,6 +1,7 @@
 package br.ufrj.dcc.so20092.fastfood.view;
 
 import br.ufrj.dcc.so20092.fastfood.control.GeraRelatorios;
+import javax.swing.JOptionPane;
 
 public class ViewRelatorio extends javax.swing.JPanel {
 
@@ -63,13 +64,14 @@ public class ViewRelatorio extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+
+        JOptionPane.showMessageDialog(null, "Arquivo de relatório gerado!");
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
         GeraRelatorios.criaArquivoRelatorioDiario();
-
+        JOptionPane.showMessageDialog(null, "Arquivo de relatório gerado!");
     }//GEN-LAST:event_jButton1ActionPerformed
 
 
