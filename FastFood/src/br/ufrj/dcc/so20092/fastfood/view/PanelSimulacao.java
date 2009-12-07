@@ -12,8 +12,10 @@
 package br.ufrj.dcc.so20092.fastfood.view;
 
 import br.ufrj.dcc.so20092.fastfood.model.CaixaAtendimento;
+import br.ufrj.dcc.so20092.fastfood.model.CaixaPagamento;
 import br.ufrj.dcc.so20092.fastfood.model.Cliente;
 import br.ufrj.dcc.so20092.fastfood.model.FilaAtendimento;
+import br.ufrj.dcc.so20092.fastfood.model.FilaPagamento;
 import br.ufrj.dcc.so20092.fastfood.model.ItemPedido;
 import br.ufrj.dcc.so20092.fastfood.model.ItemPedido;
 import java.awt.Color;
@@ -75,6 +77,8 @@ public class PanelSimulacao extends javax.swing.JPanel {
         fila5 = new javax.swing.JTextArea();
         jScrollPane15 = new javax.swing.JScrollPane();
         fila6 = new javax.swing.JTextArea();
+        jLabel11 = new javax.swing.JLabel();
+        clientesRestantesFilaPagamento = new javax.swing.JLabel();
 
         caixaAtendimento0.setBackground(new java.awt.Color(0, 255, 0));
         caixaAtendimento0.setColumns(20);
@@ -121,7 +125,7 @@ public class PanelSimulacao extends javax.swing.JPanel {
         fila1.setWrapStyleWord(true);
         jScrollPane6.setViewportView(fila1);
 
-        jLabel4.setText("Fila");
+        jLabel4.setText("Fila Única");
 
         jLabel5.setText("clientes restantes na fila");
 
@@ -169,7 +173,7 @@ public class PanelSimulacao extends javax.swing.JPanel {
         caixaPagamento2.setWrapStyleWord(true);
         jScrollPane12.setViewportView(caixaPagamento2);
 
-        jLabel10.setText("Fila");
+        jLabel10.setText("Fila Única");
 
         fila4.setColumns(20);
         fila4.setLineWrap(true);
@@ -189,6 +193,10 @@ public class PanelSimulacao extends javax.swing.JPanel {
         fila6.setWrapStyleWord(true);
         jScrollPane15.setViewportView(fila6);
 
+        jLabel11.setText("clientes restantes na fila");
+
+        clientesRestantesFilaPagamento.setText("0");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -203,7 +211,7 @@ public class PanelSimulacao extends javax.swing.JPanel {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel1)
                                     .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(11, 11, 11)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -227,8 +235,7 @@ public class PanelSimulacao extends javax.swing.JPanel {
                                             .addGroup(layout.createSequentialGroup()
                                                 .addComponent(clientesRestantes)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jLabel5)))))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))))
+                                                .addComponent(jLabel5))))))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(23, 23, 23)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -243,13 +250,18 @@ public class PanelSimulacao extends javax.swing.JPanel {
                             .addComponent(jLabel8)
                             .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(clientesRestantesFilaPagamento)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel11))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(411, 411, 411)
-                        .addComponent(jLabel10))
+                        .addGap(387, 387, 387)
+                        .addComponent(jLabel4))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(401, 401, 401)
-                        .addComponent(jLabel4)))
+                        .addGap(392, 392, 392)
+                        .addComponent(jLabel10)))
                 .addContainerGap(101, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -264,7 +276,6 @@ public class PanelSimulacao extends javax.swing.JPanel {
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -285,7 +296,8 @@ public class PanelSimulacao extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(clientesRestantes)
-                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(13, 13, 13)
@@ -300,15 +312,20 @@ public class PanelSimulacao extends javax.swing.JPanel {
                     .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(12, 12, 12)
                 .addComponent(jLabel10)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(66, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(clientesRestantesFilaPagamento)
+                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(72, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -338,6 +355,23 @@ public class PanelSimulacao extends javax.swing.JPanel {
             System.out.println("entrei em esvaziar caixa");
             caixaAtendimento2.setBackground(new Color(0, 255, 0));
             caixaAtendimento2.setText("Caixa livre");
+        }
+    }
+
+    public static void esvaziarCaixaPagamento(Integer id) {
+        System.out.println("vou esvaziar a caixa " + id);
+        if (id == 0) {
+        System.out.println("entrei em esvaziar caixa");
+            caixaPagamento0.setBackground(new Color(0, 255, 0));
+            caixaPagamento0.setText("Caixa livre");
+        } else if (id == 1) {
+            System.out.println("entrei em esvaziar caixa");
+            caixaPagamento1.setBackground(new Color(0, 255, 0));
+            caixaPagamento1.setText("Caixa livre");
+        } else if (id == 2) {
+            System.out.println("entrei em esvaziar caixa");
+            caixaPagamento2.setBackground(new Color(0, 255, 0));
+            caixaPagamento2.setText("Caixa livre");
         }
     }
 
@@ -375,6 +409,40 @@ public class PanelSimulacao extends javax.swing.JPanel {
         clientesRestantes.setText(s);
     }
 
+    public static void atualizarClientesPagamento() {
+        fila1.setText("");
+        fila2.setText("");
+        fila3.setText("");
+
+        Cliente cliente = new Cliente();
+        FilaPagamento fp = CaixaPagamento.getFila();
+        String pedido = "";
+        Integer i = 0;
+        Integer j = 0;
+        for(Cliente c : fp.getFila()){
+            i++;
+            HashSet<ItemPedido> itensPedido = c.getPedido().getItem();
+            for (ItemPedido item : itensPedido) {
+                String produto = item.getProduto().getNome();
+                Integer quantidade = item.getQuantidade();
+                pedido += produto + " - " + quantidade + "\n";
+            }
+            if (i == 1) {
+                j++;
+                fila4.setText(pedido);
+            } else if (i == 2) {
+                j++;
+                fila5.setText(pedido);
+            } else if ( i == 3 ) {
+                j++;
+                fila6.setText(pedido);
+            }
+            pedido = "";
+        }
+        String s = String.valueOf(fp.getFila().size() - j);
+        clientesRestantesFilaPagamento.setText(s);
+    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JTextArea caixaAtendimento0;
@@ -384,6 +452,7 @@ public class PanelSimulacao extends javax.swing.JPanel {
     public static javax.swing.JTextArea caixaPagamento1;
     public static javax.swing.JTextArea caixaPagamento2;
     public static javax.swing.JLabel clientesRestantes;
+    public static javax.swing.JLabel clientesRestantesFilaPagamento;
     public static javax.swing.JTextArea fila1;
     public static javax.swing.JTextArea fila2;
     public static javax.swing.JTextArea fila3;
@@ -393,6 +462,7 @@ public class PanelSimulacao extends javax.swing.JPanel {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
