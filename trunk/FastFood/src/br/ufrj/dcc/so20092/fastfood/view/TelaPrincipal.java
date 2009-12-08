@@ -27,6 +27,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     /** Creates new form NewJFrame */
     public TelaPrincipal() {
+        super("UFRJ Fast Food");
         criaMenu();
         initComponents();
         
@@ -140,8 +141,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(174, 174, 174)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -185,7 +185,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     public void clicouSobre() {
-
+        trocaForm(new PanelSobre());
     }
 
     public void clicouSair() {

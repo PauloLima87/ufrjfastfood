@@ -8,7 +8,8 @@ import java.util.HashSet;
 import junit.framework.TestCase;
 
 public class ProdutoTest extends TestCase {
-/*    public void testconstructor() {
+    /*
+    public void testconstructor() {
         HashSet<ItemProduto> ingredientes = new HashSet<ItemProduto>();
         ingredientes.add(new ItemProduto(new Ingrediente("alface", 0.5), 1));
         Produto p = new Produto("big mac", 7.0, ingredientes);
@@ -17,5 +18,8 @@ public class ProdutoTest extends TestCase {
         assertEquals(p.getValorUnidade(), 7.0);
 
     }*/
+    public void test() {
+
+    }
 
 }

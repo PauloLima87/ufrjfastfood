@@ -5,28 +5,28 @@ import java.awt.Color;
 import java.util.HashSet;
 import java.util.concurrent.Semaphore;
 
-public class CaixaPagamento extends Thread
+public class Cozinheiro extends Thread
 {
-    private static FilaPagamento fila;
+    private static FilaCozinheiro fila;
     private int id;
     private Semaphore sem;
     private Boolean disponivel = true;
     private Cliente cliente;
 
 
-    public static FilaPagamento getFila() {
+    public static FilaCozinheiro getFila() {
         return fila;
     }
 
-    public static void setFila(FilaPagamento aFila) {
+    public static void setFila(FilaCozinheiro aFila) {
         fila = aFila;
     }
 
-    public CaixaPagamento(int i, Semaphore s)
+    public Cozinheiro(int i, Semaphore s)
     {
         this.id = i;
         this.sem = s;
-        System.out.println("CaixaPagamento " + i + " aberta!");
+        System.out.println("CaixaAtendimento " + i + " aberta!");
     }
 
     public Boolean getDisponivel() {
@@ -46,17 +46,10 @@ public class CaixaPagamento extends Thread
     {
         try
         {
-            sleep(5000);
+            sleep(random(3000)+2000);
         } catch (InterruptedException e)
         {
         }
-    }
-
-    private synchronized Boolean efetuarPagamento()
-    {
-        System.out.println("Caixa Pagamento " + id + " efetuando pagamento...");
-        waitAtendimento();
-        return true;
     }
 
     public synchronized void atualizaCaixa() {
@@ -66,42 +59,39 @@ public class CaixaPagamento extends Thread
             String produto = item.getProduto().getNome();
             Integer quantidade = item.getQuantidade();
             pedido += produto + " - " + quantidade + "\n";
+
         }
+
         if (this.id == 0) {
-            PanelSimulacao.caixaPagamento0.setBackground(new Color(255, 0, 0));
-            PanelSimulacao.caixaPagamento0.setText(pedido);
+            PanelSimulacao.caixaCozinheiro0.setBackground(new Color(255, 0, 0));
+            PanelSimulacao.caixaCozinheiro0.setText(pedido);
         } else if (this.id == 1) {
-            PanelSimulacao.caixaPagamento1.setBackground(new Color(255, 0, 0));
-            PanelSimulacao.caixaPagamento1.setText(pedido);
+            PanelSimulacao.caixaCozinheiro1.setBackground(new Color(255, 0, 0));
+            PanelSimulacao.caixaCozinheiro1.setText(pedido);
         } else if (this.id == 2) {
-            PanelSimulacao.caixaPagamento2.setBackground(new Color(255, 0, 0));
-            PanelSimulacao.caixaPagamento2.setText(pedido);
+            PanelSimulacao.caixaCozinheiro2.setBackground(new Color(255, 0, 0));
+            PanelSimulacao.caixaCozinheiro2.setText(pedido);
         }
     }
 
     public synchronized Boolean atende() {
-        System.out.println("Iniciando atendimento de pagamento");
+        System.out.println("Iniciando preparo do pedido");
         cliente = getFila().getNext();
         atualizaCaixa();
         this.disponivel = false;
-        PanelSimulacao.atualizarClientesPagamento();
-        if (!efetuarPagamento()) {
-            System.out.println("Não foi possivel efetuar o pagamento do pedido...");
-            this.disponivel = true;
-            this.cliente = null;
-            PanelSimulacao.esvaziarCaixaPagamento(this.id);
-            return false;
-        }
+        PanelSimulacao.atualizarClientes();
         this.disponivel = true;
-        PanelSimulacao.esvaziarCaixaPagamento(this.id);
-        Cozinheiro.getFila().addCliente(cliente);
-        System.out.println("Encaminhando produto para a cozinha...");
+        System.out.println("Encaminhando pedido para o entregador.");
+        atualizaCaixa();
+        //CaixaPagamento.getFila().addCliente(cliente);
+        //System.out.println(CaixaPagamento.getFila().getFila().size());
         return true;
     }
 
     public synchronized void run()
     {
         while(true) {
+
             try
             {
                 sem.acquire();
@@ -110,6 +100,8 @@ public class CaixaPagamento extends Thread
             }
             if (this.disponivel && !(this.fila.getFila().size() == 0)) {
                 atende();
+                waitAtendimento();
+                PanelSimulacao.esvaziarCozinheiro(this.id);
             }
             sem.release();
         }

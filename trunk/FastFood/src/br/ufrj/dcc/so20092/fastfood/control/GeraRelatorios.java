@@ -6,15 +6,9 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.HashSet;
 
-/**
- *
- * @author Thiago Rüdiger
- */
 public class GeraRelatorios {
 
     static HashSet<ItemEstoque> itens = Estoque.itensEstoque;
@@ -27,34 +21,33 @@ public class GeraRelatorios {
         SimpleDateFormat formatador = new SimpleDateFormat("ddMMyyyy_HHmm");
         String strDT = formatador.format(dt);
 
-            try {
-                pw = new PrintWriter (new FileOutputStream("./relatorio_diario_"+ strDT +".txt", false), false);
+        try {
+            pw = new PrintWriter (new FileOutputStream("./relatorio_diario_"+ strDT +".txt", false), false);
 
-                pw.print("Quantidade de ítens em estoque:");
+            pw.print("Quantidade de ítens em estoque:");
+            pw.write(13);
+            pw.write(10);
+            pw.write(13);
+            pw.write(10);
+
+            for (ItemEstoque item : itens) {
+                pw.write(item.getIngrediente().getNome());
+                pw.write(" possui ");
+                pw.write(String.valueOf(item.getQuantidade()));
+                pw.write(" ");
+                pw.write(String.valueOf(item.getIngrediente().getUnidade()));
+                pw.write(" em estoque.");
+
                 pw.write(13);
                 pw.write(10);
-                pw.write(13);
-                pw.write(10);
-                
-                for (ItemEstoque item : itens) {
-                    pw.write(item.getIngrediente().getNome());
-                    pw.write(" possui ");
-                    pw.write(String.valueOf(item.getQuantidade()));
-                    pw.write(" ");
-                    pw.write(String.valueOf(item.getIngrediente().getUnidade()));
-                    pw.write(" em estoque.");
-
-                    pw.write(13);
-                    pw.write(10);
-                }
-
-                pw.close(); 
-
-                return true;
-            } catch (FileNotFoundException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                    return false;
             }
+
+            pw.close();
+
+            return true;
+        } catch (FileNotFoundException e) {
+                e.printStackTrace();
+                return false;
+        }
     }
 }

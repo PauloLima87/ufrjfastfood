@@ -1,18 +1,9 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package br.ufrj.dcc.so20092.fastfood.model;
 
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Random;
 
-/**
- *
- * @author Pablo
- */
 public class Cliente {
     private Pedido pedido;
 

@@ -1,0 +1,19 @@
+Quantidade de ítens em estoque:
+
+queijo minas possui 1000 gramas em estoque.
+pão de forma possui 994 fatias em estoque.
+lata de koka-cola possui 0 latas em estoque.
+rúcula possui 1000 gramas em estoque.
+lata de phanta possui 0 latas em estoque.
+pão árabe possui 1000 fatias em estoque.
+peito de peru possui 1000 gramas em estoque.
+cream cheese possui 1000 gramas em estoque.
+requeijão possui 955 gramas em estoque.
+azeite possui 1000 gramas em estoque.
+beterraba possui 850 gramas em estoque.
+alface possui 1000 gramas em estoque.
+tomate seco possui 1000 gramas em estoque.
+cenoura possui 850 gramas em estoque.
+presunto parma possui 1000 gramas em estoque.
+lata de ispraite possui 0 latas em estoque.
+peito de frango possui 700 gramas em estoque.
