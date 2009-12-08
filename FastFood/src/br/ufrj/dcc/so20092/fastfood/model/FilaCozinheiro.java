@@ -2,7 +2,7 @@ package br.ufrj.dcc.so20092.fastfood.model;
 
 import java.util.ArrayList;
 
-public class FilaAtendimento {
+public class FilaCozinheiro {
     private ArrayList<Cliente> fila = new ArrayList<Cliente>();
 
     public void addCliente(Cliente cliente) {

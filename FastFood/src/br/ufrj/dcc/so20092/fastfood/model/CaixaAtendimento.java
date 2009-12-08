@@ -5,8 +5,6 @@ import java.awt.Color;
 import java.util.HashSet;
 import java.util.concurrent.Semaphore;
 
-//Solving the mutual exclusion problem using Semaphore class
-
 public class CaixaAtendimento extends Thread
 {
     private static FilaAtendimento fila;
@@ -48,7 +46,7 @@ public class CaixaAtendimento extends Thread
     {
         try
         {
-            sleep(5000);
+            sleep(random(3000)+2000);
         } catch (InterruptedException e)
         {
         }
@@ -57,8 +55,48 @@ public class CaixaAtendimento extends Thread
     private synchronized Boolean verificarDisponibilidadePedido()
     {
         System.out.println("Caixa Atendimento " + id + " Verificando disponibilidade do pedido.");
+
         waitAtendimento();
-        //System.out.println("Caixa Atendimento " + id + " Verificando disponibilidade do pedido.");
+
+        synchronized(this.cliente) {
+
+            HashSet<ItemPedido> pedido = this.cliente.getPedido().getItem();
+            for(ItemPedido itemPedido : pedido) {
+                System.out.print(itemPedido.getProduto().getNome());
+                HashSet<ItemProduto> itensProduto = itemPedido.getProduto().getIngredientes();
+                System.out.println("itens do produto" + itensProduto.size());
+                for(ItemProduto itemProduto : itensProduto) {
+                    for (ItemEstoque ie : Estoque.itensEstoque) {
+                        if (ie.getIngrediente().getNome().equalsIgnoreCase(itemProduto.getIngrediente().getNome())) {
+                                if (ie.getQuantidade() - itemProduto.getQuantidade() >= 0) {
+                                    ie.setQuantidade(ie.getQuantidade() - itemProduto.getQuantidade());
+                                }
+                                else {
+                                    String p = "Pedido indisponível!";
+                                    if (this.id == 0) {
+                                        PanelSimulacao.caixaAtendimento0.setBackground(new Color(255, 255, 0));
+                                        PanelSimulacao.caixaAtendimento0.setText(p);
+                                    } else if (this.id == 1) {
+                                        PanelSimulacao.caixaAtendimento1.setBackground(new Color(255, 255, 0));
+                                        PanelSimulacao.caixaAtendimento1.setText(p);
+                                    } else if (this.id == 2) {
+                                        PanelSimulacao.caixaAtendimento2.setBackground(new Color(255, 255, 0));
+                                        PanelSimulacao.caixaAtendimento2.setText(p);
+                                    }
+                                    try
+                                    {
+                                        sleep(2000);
+                                    } catch (InterruptedException e)
+                                    {
+                                    }
+                                    return false;
+                                }
+                        }
+                    }
+                }
+            }
+        }
+
         return true;
     }
 
@@ -69,7 +107,9 @@ public class CaixaAtendimento extends Thread
             String produto = item.getProduto().getNome();
             Integer quantidade = item.getQuantidade();
             pedido += produto + " - " + quantidade + "\n";
+
         }
+        
         if (this.id == 0) {
             PanelSimulacao.caixaAtendimento0.setBackground(new Color(255, 0, 0));
             PanelSimulacao.caixaAtendimento0.setText(pedido);
@@ -112,11 +152,9 @@ public class CaixaAtendimento extends Thread
                 sem.acquire();
             } catch (InterruptedException e)
             {
-                // ...
             }
             if (this.disponivel && !(this.fila.getFila().size() == 0)) {
                 atende();
-                System.out.println(">>>>>>>>>>>>>>>>>fila de atendimento" + CaixaAtendimento.getFila().getFila().size());
             }
             sem.release();
         }

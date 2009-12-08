@@ -7,16 +7,6 @@ public class Produto {
     private double valorUnidade;
 
     private HashSet<ItemProduto> ingredientes = new HashSet<ItemProduto>();
-
-   /* public Produto(String string, double d, HashSet<Ingrediente> ingredientes) {
-        throw new UnsupportedOperationException("Not yet implemented");
-    }*/
-
-    /*    public Produto(String nome, double valorUnidade, HashSet<ItemProduto> ingredientes) {
-        this.nome = nome;
-        this.valorUnidade = valorUnidade;
-        this.ingredientes = ingredientes;
-    }*/
    
     public String getNome() {
         return nome;

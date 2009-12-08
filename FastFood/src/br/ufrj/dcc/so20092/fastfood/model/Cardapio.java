@@ -10,10 +10,10 @@ import java.util.HashSet;
 
 public class Cardapio {
 
-    private ArrayList<Sanduiche> sanduiches = new ArrayList<Sanduiche>();
-    private ArrayList<Bebida> bebidas = new ArrayList<Bebida>();
+    public static ArrayList<Sanduiche> sanduiches = new ArrayList<Sanduiche>();
+    public static ArrayList<Bebida> bebidas = new ArrayList<Bebida>();
 
-   public static Ingrediente pao = new Ingrediente("pão árabe", 0.5, "fatias");
+    public static Ingrediente pao = new Ingrediente("pão árabe", 0.5, "fatias");
     public static Ingrediente paoForma = new Ingrediente("pão de forma", 0.5, "fatias");
     public static Ingrediente tomate = new Ingrediente("tomate seco", 0.3, "gramas");
     public static Ingrediente creamCheese = new Ingrediente("cream cheese", 2.0, "gramas");
@@ -31,34 +31,25 @@ public class Cardapio {
     public static Ingrediente cenoura = new Ingrediente("cenoura", 0.4, "gramas");
     public static Ingrediente beterraba = new Ingrediente("beterraba", 0.8, "gramas");
 
-    /*Sanduiches:
-- Frango com abacaxi
-Um pão de leite, 150 gramas de peito de frango grelhado, 50g de abacaxi.
-(R$ 7,50)
-- Minas especial
-Duas metades de pão árabe, 100g de queijo minas, 5g de orégano e 35g de tomate
-(R$ 6,90)
-*/
-
     public Cardapio() {
 
         HashSet<ItemProduto> itens = new HashSet<ItemProduto>();
         ItemProduto ip = new ItemProduto(pao, 2);
         itens.add(ip);
-        ip = new ItemProduto(tomate, 50);
-        itens.add(ip);
-        ip = new ItemProduto(presuntoParma, 75);
-        itens.add(ip);
-        ip = new ItemProduto(rucula, 20);
-        itens.add(ip);
-        ip = new ItemProduto(queijoMinas, 50);
-        itens.add(ip);
-        ip = new ItemProduto(azeite, 1);
-        itens.add(ip);
+        ItemProduto ip2 = new ItemProduto(tomate, 50);
+        itens.add(ip2);
+        ItemProduto ip3 = new ItemProduto(presuntoParma, 75);
+        itens.add(ip3);
+        ItemProduto ip4 = new ItemProduto(rucula, 20);
+        itens.add(ip4);
+        ItemProduto ip5 = new ItemProduto(queijoMinas, 50);
+        itens.add(ip5);
+        ItemProduto ip6 = new ItemProduto(azeite, 1);
+        itens.add(ip6);
         Sanduiche s1 = new Sanduiche("Tomate seco no pão árabe", itens);
         sanduiches.add(s1);
 
-        itens.clear();
+        itens = new HashSet<ItemProduto>();
         ip = new ItemProduto(paoForma, 2);
         itens.add(ip);
         ip = new ItemProduto(creamCheese, 15);
@@ -72,7 +63,7 @@ Duas metades de pão árabe, 100g de queijo minas, 5g de orégano e 35g de tomat
         Sanduiche s2 = new Sanduiche("Peito de peru", itens);
         sanduiches.add(s2);
 
-        itens.clear();
+        itens = new HashSet<ItemProduto>();
         ip = new ItemProduto(paoForma, 2);
         itens.add(ip);
         ip = new ItemProduto(requeijao, 15);
@@ -86,21 +77,21 @@ Duas metades de pão árabe, 100g de queijo minas, 5g de orégano e 35g de tomat
         Sanduiche s3 = new Sanduiche("Cenoura com Beterraba", itens);
         sanduiches.add(s3);
 
-        itens.clear();
+        itens = new HashSet<ItemProduto>();
         ip = new ItemProduto(koka, 1);
         itens.add(ip);
         
         Bebida b1 = new Bebida("Koka-Cola", itens);
         bebidas.add(b1);
 
-        itens.clear();
+        itens = new HashSet<ItemProduto>();
         ip = new ItemProduto(ispraite, 1);
         itens.add(ip);
 
         Bebida b2 = new Bebida("Ispraite", itens);
         bebidas.add(b2);
 
-        itens.clear();
+        itens = new HashSet<ItemProduto>();
         ip = new ItemProduto(phanta, 1);
         itens.add(ip);
 
@@ -108,30 +99,15 @@ Duas metades de pão árabe, 100g de queijo minas, 5g de orégano e 35g de tomat
         bebidas.add(b3);
     }
 
-    /**
-     * @return the sanduiches
-     */
     public ArrayList<Sanduiche> getSanduiches() {
         return sanduiches;
     }
-
-    /**
-     * @param sanduiches the sanduiches to set
-     */
     public void setSanduiches(ArrayList<Sanduiche> sanduiches) {
         this.sanduiches = sanduiches;
     }
-
-    /**
-     * @return the bebidas
-     */
     public ArrayList<Bebida> getBebidas() {
         return bebidas;
     }
-
-    /**
-     * @param bebidas the bebidas to set
-     */
     public void setBebidas(ArrayList<Bebida> bebidas) {
         this.bebidas = bebidas;
     }
